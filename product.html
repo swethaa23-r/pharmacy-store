@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Details - STACKLY</title>
+<meta content="View detailed product information, dosages, safety warnings, and order authentic healthcare items from STACKLY." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- CSS Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<!-- SITE HEADER -->
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<nav class="desktop-nav">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link active" href="shop.html">Shop</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="health.html">Health</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" href="login.html" style="padding: 8px 16px; font-weight: 500; font-size: 0.9rem; border-radius: var(--radius-pill); margin-right: 10px;">Login</a>
+<a aria-label="View Cart" class="icon-action-btn" href="cart.html">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-badge js-cart-count">0</span>
+</a>
+<button aria-label="Open Navigation Menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MOBILE NAVIGATION OVERLAY -->
+<div class="mobile-nav-overlay">
+<div class="mobile-nav-drawer">
+<div class="mobile-nav-header">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<button aria-label="Close Menu" class="mobile-nav-close">×</button>
+</div>
+<nav class="mobile-nav-links">
+<a class="mobile-nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+<a class="mobile-nav-link active" href="shop.html"><i class="fas fa-store"></i> Shop</a>
+<a class="mobile-nav-link" href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a class="mobile-nav-link" href="health.html"><i class="fas fa-heartbeat"></i> Health</a>
+<a class="mobile-nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+<a class="mobile-nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a class="mobile-nav-link" href="cart.html"><i class="fas fa-shopping-bag"></i> Cart (<span class="js-cart-count">0</span>)</a>
+<a class="mobile-nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Account Login</a>
+</nav>
+</div>
+</div>
+<!-- MAIN CONTENT -->
+<main>
+<section class="section-padding">
+<div class="container">
+<!-- PRODUCT DETAILS DYNAMIC CONTAINER -->
+<div id="product-detail-container">
+<!-- Rendered by js/main.js based on URL param ?id=... -->
+</div>
+<!-- RELATED PRODUCTS SECTION -->
+<div class="mt-8" style="margin-top: 80px;">
+<div class="section-header">
+<h2 class="section-title">Related Healthcare Essentials</h2>
+<p class="section-subtitle">Customers who viewed this item also considered these authentic remedies.</p>
+</div>
+<div class="products-grid js-animate-grid" id="related-products-grid">
+<!-- Populated dynamically by js/main.js -->
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+</a>
+<p>Trusted Healthcare. Delivered with Care. Sourcing certified pharmaceuticals and wellness essentials to safeguard family health nationwide.</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-btn" href="404.html"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Twitter" class="social-btn" href="404.html"><i class="fab fa-twitter"></i></a>
+<a aria-label="Instagram" class="social-btn" href="404.html"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-btn" href="404.html"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="404.html">Shop Medicines</a>
+<a href="categories.html">Health Categories</a>
+<a href="health.html">Health Guides</a>
+<a href="about.html">About STACKLY</a>
+<a href="contact.html">Contact Support</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Popular Categories</h4>
+<div class="footer-links">
+<a href="404.html">OTC Medicines</a>
+<a href="404.html">Vitamins &amp; Supplements</a>
+<a href="404.html">Dermatology &amp; Skin</a>
+<a href="404.html">Baby Care &amp; Formulas</a>
+<a href="404.html">Medical Equipment</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<div class="footer-contact-info" style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-envelope" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> info@stackly.com</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> 9999900000</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> MMR Complex, Chinna Tirupathi, near by Chinna Muniyappan Kovil, Salem 636008</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 STACKLY Pharmacy Store. All rights reserved.</p>
+<p>Designed with care for superior healthcare access.</p>
+</div>
+</div>
+</footer>
+<!-- GLOBAL SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+<div class="modal-card search-modal-card">
+<button aria-label="Close Search" class="modal-close-btn search-modal-close">×</button>
+<div class="search-input-header">
+<i class="fas fa-search text-teal"></i>
+<input autocomplete="off" id="global-search-input" placeholder="Search medicines, vitamins, skincare..." type="text"/>
+</div>
+<div class="search-results-list" id="global-search-results">
+<div class="search-placeholder">
+<i class="fas fa-search"></i>
+<p>Type at least 2 characters to search products...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

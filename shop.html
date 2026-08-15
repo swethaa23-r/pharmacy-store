@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shop Healthcare Essentials - STACKLY</title>
+<meta content="Find trusted OTC medicines, vitamins, skincare products, baby care items, medical devices, and everyday healthcare essentials at STACKLY." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- CSS Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<!-- SITE HEADER -->
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<nav class="desktop-nav">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link active" href="shop.html">Shop</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="health.html">Health</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" href="login.html" style="padding: 8px 16px; font-weight: 500; font-size: 0.9rem; border-radius: var(--radius-pill); margin-right: 10px;">Login</a>
+<a aria-label="View Cart" class="icon-action-btn" href="cart.html">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-badge js-cart-count">0</span>
+</a>
+<button aria-label="Open Navigation Menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MOBILE NAVIGATION OVERLAY -->
+<div class="mobile-nav-overlay">
+<div class="mobile-nav-drawer">
+<div class="mobile-nav-header">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<button aria-label="Close Menu" class="mobile-nav-close">×</button>
+</div>
+<nav class="mobile-nav-links">
+<a class="mobile-nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+<a class="mobile-nav-link active" href="shop.html"><i class="fas fa-store"></i> Shop</a>
+<a class="mobile-nav-link" href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a class="mobile-nav-link" href="health.html"><i class="fas fa-heartbeat"></i> Health</a>
+<a class="mobile-nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+<a class="mobile-nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a class="mobile-nav-link" href="cart.html"><i class="fas fa-shopping-bag"></i> Cart (<span class="js-cart-count">0</span>)</a>
+<a class="mobile-nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Account Login</a>
+</nav>
+</div>
+</div>
+<!-- MAIN CONTENT -->
+<main>
+<!-- PAGE HERO & SEARCH BAR -->
+<section class="page-hero has-ken-burns">
+<div class="ken-burns-slideshow">
+<div class="slide" style="background-image: url('assets/images/shop_banner_new.webp');"></div>
+<div class="slide" style="background-image: url('assets/images/shop_banner_new.webp');"></div>
+<div class="slide" style="background-image: url('assets/images/shop_banner_new.webp');"></div>
+</div>
+<div class="page-hero-overlay"></div>
+<div class="container relative-z">
+<h1>Shop Healthcare Essentials</h1>
+<p>Find trusted medicines, wellness products and everyday healthcare essentials.</p>
+<div class="search-input-box" style="max-width: 540px; margin: 24px auto 0;">
+<i class="fas fa-search"></i>
+<input id="shop-search-input" placeholder="Search medicines, vitamins, skincare by name or category..." type="text"/>
+</div>
+</div>
+<div class="hero-wave-divider">
+<svg data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path class="shape-fill" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.69,38,154.51,75,233.15,80.12,263.26,82.08,293.18,73.1,321.39,56.44Z"></path>
+</svg>
+</div>
+</section>
+<!-- SHOP FILTER & PRODUCT GRID SECTION -->
+<section class="section-padding">
+<div class="container">
+<!-- FILTER CONTROLS AREA -->
+<div class="shop-controls-bar">
+<!-- CATEGORY PILLS -->
+<div class="shop-category-pills">
+<button class="shop-category-pill active" data-category="all">All</button>
+<button class="shop-category-pill" data-category="medicines">OTC Medicines</button>
+<button class="shop-category-pill" data-category="vitamins">Vitamins</button>
+<button class="shop-category-pill" data-category="personal-care">Personal Care</button>
+<button class="shop-category-pill" data-category="skin-care">Skin Care</button>
+<button class="shop-category-pill" data-category="baby-care">Baby Care</button>
+<button class="shop-category-pill" data-category="medical-devices">Medical Devices</button>
+<button class="shop-category-pill" data-category="wellness">Wellness</button>
+<button class="shop-category-pill" data-category="first-aid">First Aid</button>
+</div>
+<!-- SECONDARY FILTERS ROW -->
+<div class="shop-filters-row">
+<!-- PRICE FILTER SLIDER -->
+<div style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600;">
+<span>Max Price:</span>
+<input id="shop-price-slider" max="100" min="10" step="5" style="accent-color: var(--primary); cursor: pointer;" type="range" value="100"/>
+<span id="shop-price-val" style="color: var(--primary); font-weight: 700;">$100</span>
+</div>
+<!-- RATING FILTER DROPDOWN -->
+<select aria-label="Filter by rating" class="sort-select" id="shop-rating-select">
+<option value="0">Rating: All Ratings</option>
+<option value="4.8">Rating: 4.8+ Stars</option>
+<option value="4.5">Rating: 4.5+ Stars</option>
+<option value="4.0">Rating: 4.0+ Stars</option>
+</select>
+<!-- SORT DROPDOWN -->
+<select aria-label="Sort products" class="sort-select" id="shop-sort-select">
+<option value="default">Sort by: Default</option>
+<option value="price-low">Price: Low to High</option>
+<option value="price-high">Price: High to Low</option>
+<option value="rating">Highest Rated</option>
+<option value="name">Name: A to Z</option>
+</select>
+</div>
+</div>
+<div class="mb-4" id="shop-results-count" style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                    Showing products...
+                </div>
+<!-- RESPONSIVE PRODUCT GRID -->
+<div class="products-grid js-animate-grid" id="shop-products-grid">
+<!-- Dynamically rendered by js/main.js -->
+</div>
+</div>
+</section>
+<!-- NEW SECTION 1: FLASH DEALS & BUNDLE SAVINGS -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Weekly Flash Deals &amp; Health Bundles</h2>
+<p class="section-subtitle">Save up to 30% on curated healthcare care packages and essential bundles.</p>
+</div>
+<div class="categories-grid js-animate-grid" style="grid-template-columns: repeat(3, 1fr);">
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Immunity Defense Bundle" src="assets/images/09_family_immunity_bundle.webp"/ loading="lazy">
+</div>
+<div class="cat-card-body">
+<span class="product-badge" style="width: fit-content;">Save 25%</span>
+<h3 class="cat-card-title">Family Immunity Bundle</h3>
+<p class="cat-card-desc">Includes Liposomal Vitamin C 1000mg, Zinc 50mg, and Vitamin D3 softgels.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto;">
+<div><span class="current-price" style="font-size: 1.3rem; font-weight: 800; color: var(--secondary);">$39.99</span> <span class="original-price" style="text-decoration: line-through; color: var(--text-muted);">$54.99</span></div>
+<button class="btn btn-primary btn-sm" onclick="addToCart('prod-1', 1);"><i class="fas fa-cart-plus"></i> Add Bundle</button>
+</div>
+</div>
+</div>
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Dermatology Skin Barrier Kit" src="assets/images/10_derma_barrier_repair_kit.webp"/ loading="lazy">
+</div>
+<div class="cat-card-body">
+<span class="product-badge" style="width: fit-content;">Save 30%</span>
+<h3 class="cat-card-title">Derma Barrier Repair Kit</h3>
+<p class="cat-card-desc">Hyaluronic Acid Serum, Ceramide Locking Cream, and Mineral SPF 50+ Sunscreen.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto;">
+<div><span class="current-price" style="font-size: 1.3rem; font-weight: 800; color: var(--secondary);">$49.99</span> <span class="original-price" style="text-decoration: line-through; color: var(--text-muted);">$69.99</span></div>
+<button class="btn btn-primary btn-sm" onclick="addToCart('prod-4', 1);"><i class="fas fa-cart-plus"></i> Add Bundle</button>
+</div>
+</div>
+</div>
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Home Diagnostic Kit" src="assets/images/11_home_diagnostic_kit.webp"/ loading="lazy">
+</div>
+<div class="cat-card-body">
+<span class="product-badge" style="width: fit-content;">Save 20%</span>
+<h3 class="cat-card-title">Home Diagnostic Kit</h3>
+<p class="cat-card-desc">Digital Oximeter, Automatic Arm BP Monitor, and Infrared Thermometer.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto;">
+<div><span class="current-price" style="font-size: 1.3rem; font-weight: 800; color: var(--secondary);">$64.99</span> <span class="original-price" style="text-decoration: line-through; color: var(--text-muted);">$82.99</span></div>
+<button class="btn btn-primary btn-sm" onclick="addToCart('prod-3', 1);"><i class="fas fa-cart-plus"></i> Add Bundle</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW SECTION 2: VERIFIED CUSTOMER REVIEWS & RATINGS SUMMARY -->
+<section class="section-padding">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Trusted by Thousands of Patients</h2>
+<p class="section-subtitle">4.9/5 Average Rating across 50,000+ verified healthcare deliveries.</p>
+</div>
+<div class="trust-grid js-animate-grid" style="grid-template-columns: repeat(3, 1fr);">
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color); flex-direction: column; text-align: left; align-items: flex-start; padding: 28px;">
+<div class="stars mb-2" style="color: var(--amber);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+<h4 style="font-size: 1.1rem; color: var(--secondary);">"Fast delivery &amp; 100% genuine products"</h4>
+<p style="font-size: 0.9rem; color: var(--text-muted); margin: 8px 0 16px;">"My vitamins arrived in insulated packaging with verified lab seals. Exceptional digital pharmacy experience."</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"><i class="fas fa-check-circle"></i> Marcus Vance — Verified Buyer</span>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color); flex-direction: column; text-align: left; align-items: flex-start; padding: 28px;">
+<div class="stars mb-2" style="color: var(--amber);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+<h4 style="font-size: 1.1rem; color: var(--secondary);">"Great prices &amp; clear dosage guidance"</h4>
+<p style="font-size: 0.9rem; color: var(--text-muted); margin: 8px 0 16px;">"The product page included clear usage directions and safety warnings. Saved 20% using code STACK20!"</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"><i class="fas fa-check-circle"></i> Amanda Thorne — Verified Buyer</span>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color); flex-direction: column; text-align: left; align-items: flex-start; padding: 28px;">
+<div class="stars mb-2" style="color: var(--amber);"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+<h4 style="font-size: 1.1rem; color: var(--secondary);">"Pharmacist chat was extremely helpful"</h4>
+<p style="font-size: 0.9rem; color: var(--text-muted); margin: 8px 0 16px;">"I was unsure if Zinc interfered with my prescription. The registered pharmacist clarified everything within 2 mins."</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);"><i class="fas fa-check-circle"></i> Chloe Bennett — Verified Buyer</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+</a>
+<p>Trusted Healthcare. Delivered with Care. Sourcing certified pharmaceuticals and wellness essentials to safeguard family health nationwide.</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-btn" href="404.html"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Twitter" class="social-btn" href="404.html"><i class="fab fa-twitter"></i></a>
+<a aria-label="Instagram" class="social-btn" href="404.html"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-btn" href="404.html"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="404.html">Shop Medicines</a>
+<a href="categories.html">Health Categories</a>
+<a href="health.html">Health Guides</a>
+<a href="about.html">About STACKLY</a>
+<a href="contact.html">Contact Support</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Popular Categories</h4>
+<div class="footer-links">
+<a href="404.html">OTC Medicines</a>
+<a href="404.html">Vitamins &amp; Supplements</a>
+<a href="404.html">Dermatology &amp; Skin</a>
+<a href="404.html">Baby Care &amp; Formulas</a>
+<a href="404.html">Medical Equipment</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<div class="footer-contact-info" style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-envelope" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> info@stackly.com</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> 9999900000</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> MMR Complex, Chinna Tirupathi, near by Chinna Muniyappan Kovil, Salem 636008</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 STACKLY Pharmacy Store. All rights reserved.</p>
+<p>Designed with care for superior healthcare access.</p>
+</div>
+</div>
+</footer>
+<!-- GLOBAL SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+<div class="modal-card search-modal-card">
+<button aria-label="Close Search" class="modal-close-btn search-modal-close">×</button>
+<div class="search-input-header">
+<i class="fas fa-search text-teal"></i>
+<input autocomplete="off" id="global-search-input" placeholder="Search medicines, vitamins, skincare..." type="text"/>
+</div>
+<div class="search-results-list" id="global-search-results">
+<div class="search-placeholder">
+<i class="fas fa-search"></i>
+<p>Type at least 2 characters to search products...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STACKLY Customer Portal - Pharmacy Management System</title>
+<meta content="STACKLY Customer Portal for managing orders, prescriptions, and settings." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- CSS Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/admin.css" rel="stylesheet"/>
+</head>
+<body class="admin-body">
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<div class="admin-wrapper">
+<!-- OVERLAY -->
+<div class="admin-sidebar-overlay"></div>
+<!-- FIXED SIDEBAR -->
+<aside class="admin-sidebar" id="admin-sidebar">
+<div class="admin-sidebar-header">
+<div style="display: flex; flex-direction: column; align-items: flex-start;">
+<a class="brand-logo" href="index.html" style="margin-bottom: 0;">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--light); opacity: 0.7; margin-left: 45px; margin-top: -8px;">Customer</span>
+</div>
+<button aria-label="Close Sidebar" class="mobile-nav-close" id="admin-sidebar-close" style="color: var(--white); display: none;">×</button>
+</div>
+<nav class="admin-nav">
+<a class="admin-nav-item active" data-section="dashboard">
+<i class="fas fa-chart-line"></i> Dashboard
+                </a>
+<a class="admin-nav-item" data-section="orders">
+<i class="fas fa-shopping-bag"></i> My Orders
+                </a>
+<a class="admin-nav-item" data-section="prescriptions">
+<i class="fas fa-file-prescription"></i> Prescriptions
+                </a>
+<a class="admin-nav-item" data-section="settings">
+<i class="fas fa-cog"></i> Settings
+                </a>
+</nav>
+<div class="admin-sidebar-footer">
+<a class="admin-nav-item" href="index.html" data-section="logout" style="color: var(--danger-light, #FEB2B2);">
+<i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="admin-main">
+<!-- TOP HEADER BAR -->
+<header class="admin-header">
+<div class="admin-header-left">
+<a href="index.html" class="admin-mobile-logo" style="display: none; font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; align-items: center; gap: 8px;">
+<i class="fas fa-prescription-bottle-alt"></i> STACKLY
+</a>
+<h1 class="admin-page-title" id="admin-page-title">Dashboard</h1>
+</div>
+<div class="admin-header-actions">
+<div class="admin-profile-btn" id="admin-profile-btn">
+<i class="fas fa-user-circle admin-avatar" style="font-size: 36px; color: var(--primary); display: flex; align-items: center; justify-content: center;"></i>
+<div class="admin-profile-info">
+<span class="admin-profile-name">Customer</span>
+<span class="admin-profile-role">Registered Member</span>
+</div>
+<!-- PROFILE DROPDOWN -->
+<div class="dropdown-menu-custom" id="admin-profile-dropdown">
+</div>
+</div>
+<button aria-label="Toggle Sidebar" class="admin-mobile-toggle" id="admin-mobile-toggle">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</header>
+<!-- MAIN CONTENT SECTIONS -->
+<div class="admin-content">
+<!-- 1. DASHBOARD OVERVIEW SECTION -->
+<section class="admin-section active" id="section-dashboard">
+<!-- WELCOME BANNER -->
+<div class="admin-welcome-banner js-animate-card">
+<div>
+<h2 id="admin-greeting">Welcome, Customer</h2>
+<p>Manage your healthcare orders and wellness essentials in one place.</p>
+</div>
+<span class="badge-tag" style="background: rgba(255, 255, 255, 0.2); color: var(--white); border: none; font-weight: 700;">
+<i class="fas fa-shield-alt"></i> Certified Member
+                        </span>
+</div>
+<!-- STATISTICS CARDS (4 COLUMNS) -->
+<div class="admin-stats-grid js-animate-grid">
+<!-- STAT 1: TOTAL ORDERS -->
+<div class="admin-stat-card js-animate-card">
+<div class="admin-stat-icon"><i class="fas fa-shopping-bag"></i></div>
+<div class="admin-stat-info">
+<span class="admin-stat-title">Total Orders</span>
+<div class="admin-stat-num js-admin-counter" data-target="24">0</div>
+<span class="admin-stat-change up"><i class="fas fa-check-circle"></i> View History</span>
+</div>
+</div>
+<!-- STAT 2: ACTIVE ORDERS -->
+<div class="admin-stat-card js-animate-card">
+<div class="admin-stat-icon"><i class="fas fa-truck-loading"></i></div>
+<div class="admin-stat-info">
+<span class="admin-stat-title">Active Orders</span>
+<div class="admin-stat-num js-admin-counter" data-target="2">0</div>
+<span class="admin-stat-change up"><i class="fas fa-clock"></i> In Transit</span>
+</div>
+</div>
+<!-- STAT 3: WISHLIST ITEMS -->
+<div class="admin-stat-card js-animate-card">
+<div class="admin-stat-icon"><i class="fas fa-heart"></i></div>
+<div class="admin-stat-info">
+<span class="admin-stat-title">Wishlist Items</span>
+<div class="admin-stat-num js-admin-counter" data-target="8">0</div>
+<span class="admin-stat-change"><i class="fas fa-eye"></i> View List</span>
+</div>
+</div>
+<!-- STAT 4: REWARD POINTS -->
+<div class="admin-stat-card js-animate-card">
+<div class="admin-stat-icon"><i class="fas fa-coins"></i></div>
+<div class="admin-stat-info">
+<span class="admin-stat-title">Reward Points</span>
+<div class="admin-stat-num js-admin-counter" data-target="1250">0</div>
+<span class="admin-stat-change up"><i class="fas fa-gift"></i> Redeem Available</span>
+</div>
+</div>
+</div>
+<!-- RECENT ORDERS TABLE -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-clock text-teal"></i> Recent Orders</h3>
+<button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">View All</button>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Date</th>
+<th>Products</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>#ORD-9842</strong></td>
+<td>Aug 13, 2026</td>
+<td>Liposomal Vitamin C 1000mg</td>
+<td>$24.99</td>
+<td><span class="status-badge processing">Processing</span></td>
+<td><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-map-marker-alt"></i> Track Order</button></td>
+</tr>
+<tr>
+<td><strong>#ORD-9841</strong></td>
+<td>Aug 10, 2026</td>
+<td>Digital Pulse Oximeter</td>
+<td>$34.99</td>
+<td><span class="status-badge shipped">Shipped</span></td>
+<td><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-truck"></i> Track Order</button></td>
+</tr>
+<tr>
+<td><strong>#ORD-9840</strong></td>
+<td>Aug 02, 2026</td>
+<td>Paracetamol Extra 500mg</td>
+<td>$8.99</td>
+<td><span class="status-badge delivered">Delivered</span></td>
+<td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-eye"></i> Details</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- RECOMMENDED PRODUCTS FOR YOU -->
+<div class="admin-card" style="margin-top: 20px;">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-star text-teal"></i> Recommended For You</h3>
+</div>
+<div style="display: flex; gap: 20px; overflow-x: auto; padding: 10px 0;">
+<!-- PRODUCT 1 -->
+<div style="flex: 1; min-width: 200px; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 15px; text-align: center;">
+<img alt="Vitamin C" src="assets/images/03_liposomal_vitamin_c_1000mg.webp" style="height: 120px; object-fit: contain; margin-bottom: 10px;"/ loading="lazy">
+<h4 style="font-size: 1rem; color: var(--secondary); margin-bottom: 5px;">Liposomal Vitamin C</h4>
+<span style="font-size: 1.1rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 10px;">$24.99</span>
+<button class="btn btn-outline btn-sm w-100" onclick="window.location.href='404.html'">Add to Cart</button>
+</div>
+<!-- PRODUCT 2 -->
+<div style="flex: 1; min-width: 200px; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 15px; text-align: center;">
+<img alt="Paracetamol" src="assets/images/01_paracetamol_extra_500mg.webp" style="height: 120px; object-fit: contain; margin-bottom: 10px;"/ loading="lazy">
+<h4 style="font-size: 1rem; color: var(--secondary); margin-bottom: 5px;">Paracetamol Extra</h4>
+<span style="font-size: 1.1rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 10px;">$8.99</span>
+<button class="btn btn-outline btn-sm w-100" onclick="window.location.href='404.html'">Add to Cart</button>
+</div>
+<!-- PRODUCT 3 -->
+<div style="flex: 1; min-width: 200px; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 15px; text-align: center;">
+<img alt="Oximeter" src="assets/images/07_digital_pulse_oximeter.webp" style="height: 120px; object-fit: contain; margin-bottom: 10px;"/ loading="lazy">
+<h4 style="font-size: 1rem; color: var(--secondary); margin-bottom: 5px;">Digital Pulse Oximeter</h4>
+<span style="font-size: 1.1rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 10px;">$34.99</span>
+<button class="btn btn-outline btn-sm w-100" onclick="window.location.href='404.html'">Add to Cart</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. MY ORDERS SECTION -->
+<section class="admin-section" id="section-orders">
+<!-- 1. Order History Table -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-box text-teal"></i> My Order History</h3>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr><th>Order ID</th><th>Date</th><th>Total</th><th>Status</th><th>Action</th></tr>
+</thead>
+<tbody>
+<tr><td>#ORD-9842</td><td>Aug 13, 2026</td><td>$24.99</td><td><span class="status-badge processing">Processing</span></td><td><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">View Details</button></td></tr>
+<tr><td>#ORD-9841</td><td>Aug 10, 2026</td><td>$34.99</td><td><span class="status-badge delivered">Shipped</span></td><td><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">View Details</button></td></tr>
+<tr><td>#ORD-9840</td><td>Aug 02, 2026</td><td>$8.99</td><td><span class="status-badge delivered">Delivered</span></td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">View Details</button></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Track Order Panel -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-truck text-teal"></i> Track an Order</h3>
+</div>
+<form>
+<div class="form-group mb-2"><input class="form-control" placeholder="Enter Order ID" type="text"/></div>
+<button class="btn btn-outline w-100" type="button" onclick="window.location.href='404.html'">Track Now</button>
+</form>
+</div>
+<!-- 3. Returns & Refunds -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-undo text-teal"></i> Returns &amp; Refunds</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Return Policy</span> <a class="text-teal" href="#"><i class="fas fa-external-link-alt"></i></a></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Initiate Return</span> <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Start</button></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 3. PRESCRIPTIONS SECTION -->
+<section class="admin-section" id="section-prescriptions">
+<!-- 1. Active Prescriptions -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-file-prescription text-teal"></i> Digital Prescriptions Portal</h3>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr><th>Prescription File</th><th>Upload Date</th><th>Status</th><th>Action</th></tr>
+</thead>
+<tbody>
+<tr><td><i class="fas fa-file-pdf text-danger"></i> Asthma_Inhaler_Rx.pdf</td><td>Aug 05, 2026</td><td><span class="status-badge delivered">Verified</span></td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">View</button></td></tr>
+<tr><td><i class="fas fa-file-pdf text-danger"></i> Blood_Panel_Rx.pdf</td><td>Aug 12, 2026</td><td><span class="status-badge pending">Pending</span></td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">View</button></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Upload Form -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-upload text-teal"></i> Upload Prescription</h3>
+</div>
+<form>
+<div class="form-group mb-2"><input accept="image/*,.pdf" class="form-control" type="file"/></div>
+<div class="form-group mb-2"><input class="form-control" placeholder="Doctor's Name (Optional)" type="text"/></div>
+<button class="btn btn-primary w-100" type="button" onclick="window.location.href='404.html'">Upload File</button>
+</form>
+</div>
+<!-- 3. Refill Reminders -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-bell text-teal"></i> Refill Reminders</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;"><span>Asthma Inhaler</span> <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">Refill</button></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between; align-items: center;"><span>Daily Vitamins</span> <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Auto-Refill On</button></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 4. SETTINGS SECTION -->
+<section class="admin-section" id="section-settings">
+<!-- 1. Personal Information -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-user text-teal"></i> Personal Account Details</h3>
+</div>
+<form style="max-width: 600px;">
+<div class="mb-3" style="display: flex; gap: 15px;">
+<div class="form-group" style="flex: 1;"><label>First Name</label><input class="form-control" type="text" value=""/></div>
+<div class="form-group" style="flex: 1;"><label>Last Name</label><input class="form-control" type="text" value=""/></div>
+</div>
+<div class="form-group mb-3">
+<label>Email Address</label>
+<input class="form-control" type="email" value=""/>
+</div>
+<div class="form-group mb-3">
+<label>Phone Number</label>
+<input class="form-control" type="tel" value="+1 (555) 234-5678"/>
+</div>
+<button class="btn btn-primary" type="button" onclick="window.location.href='404.html'">Save Changes</button>
+</form>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Saved Addresses -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-map-marker-alt text-teal"></i> Saved Shipping Addresses</h3>
+</div>
+<div style="border: 1px solid var(--primary); padding: 16px; border-radius: var(--radius-md); position: relative;">
+<span class="badge-tag" style="position: absolute; top: 10px; right: 10px;">Default</span>
+<h4>Home Address</h4>
+<p class="text-muted mt-2">123 Health Ave, Suite 100<br/>New York, NY 10001</p>
+<div class="mt-3"><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Edit</button></div>
+</div>
+</div>
+<!-- 3. Security Settings -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-lock text-teal"></i> Security Settings</h3>
+</div>
+<form>
+<div class="form-group mb-2"><input class="form-control" placeholder="Current Password" type="password"/></div>
+<div class="form-group mb-2"><input class="form-control" placeholder="New Password" type="password"/></div>
+<button class="btn btn-outline w-100" type="button" onclick="window.location.href='404.html'">Update Password</button>
+</form>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/admin.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const email = localStorage.getItem('loggedInUser');
+            if (email) {
+                let username = email.split('@')[0];
+                username = username.charAt(0).toUpperCase() + username.slice(1);
+                const nameEls = document.querySelectorAll('.admin-profile-name');
+                nameEls.forEach(el => el.textContent = username);
+                
+                const greetingEl = document.getElementById('admin-greeting');
+                if (greetingEl) greetingEl.textContent = 'Welcome, ' + username;
+                
+                // Update form email if it exists
+                const emailInputs = document.querySelectorAll('input[type="email"]');
+                emailInputs.forEach(input => {
+                    if (input.value === '') {
+                        input.value = email;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

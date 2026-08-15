@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>404 Page Not Found - STACKLY</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Global Stylesheets (for variables and buttons) -->
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white, #ffffff);
+            overflow-x: hidden;
+        }
+
+        .error-page-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .error-code {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 10rem;
+            font-weight: 800;
+            color: var(--primary, #087F8C);
+            margin: 0;
+            line-height: 1;
+            opacity: 0;
+            /* 
+               First animation slides and fades it up.
+               Second animation provides the continuous floating effect.
+            */
+            animation: 
+                slideFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                floatSubtle 4s ease-in-out 0.8s infinite alternate;
+        }
+
+        .error-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary, #0B4F6C);
+            margin: 20px 0 10px;
+            opacity: 0;
+            animation: slideFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+        }
+
+        .error-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted, #6B7280);
+            max-width: 400px;
+            margin: 0 0 40px;
+            opacity: 0;
+            animation: slideFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            opacity: 0;
+            animation: slideFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+        }
+
+        .btn-go-back {
+            background-color: transparent;
+            color: var(--primary, #087F8C);
+            border: 2px solid var(--primary, #087F8C);
+            transition: all 0.3s ease;
+        }
+
+        .btn-go-back:hover {
+            background-color: var(--primary, #087F8C);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .error-code { font-size: 6rem; }
+            .error-title { font-size: 2rem; }
+            .error-actions {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+            }
+            .error-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideFadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatSubtle {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-12px); }
+        }
+    </style>
+</head>
+<body>
+<div class="error-page-container">
+<h1 class="error-code">404</h1>
+<h2 class="error-title">Page Not Found</h2>
+<p class="error-desc">Sorry, the page you're looking for doesn't exist.</p>
+<div class="error-actions">
+<button class="btn btn-go-back btn-lg" onclick="window.history.back()">
+<i class="fas fa-arrow-left"></i> Go Back
+            </button>
+<a class="btn btn-primary btn-lg" href="index.html">
+<i class="fas fa-home"></i> Go to Home
+            </a>
+</div>
+</div>
+</body>
+</html>

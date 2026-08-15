@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Guide to Better Health - STACKLY Health &amp; Wellness</title>
+<meta content="Simple, reliable healthcare advice, daily wellness tips, medicine safety guidelines, family care advice, and clinical health articles from STACKLY pharmacists." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- CSS Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+<link href="css/health-animations.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<!-- SITE HEADER -->
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<nav class="desktop-nav">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="shop.html">Shop</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link active" href="health.html">Health</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" href="login.html" style="padding: 8px 16px; font-weight: 500; font-size: 0.9rem; border-radius: var(--radius-pill); margin-right: 10px;">Login</a>
+<a aria-label="View Cart" class="icon-action-btn" href="cart.html">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-badge js-cart-count">0</span>
+</a>
+<button aria-label="Open Navigation Menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MOBILE NAVIGATION OVERLAY -->
+<div class="mobile-nav-overlay">
+<div class="mobile-nav-drawer">
+<div class="mobile-nav-header">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<button aria-label="Close Menu" class="mobile-nav-close">×</button>
+</div>
+<nav class="mobile-nav-links">
+<a class="mobile-nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+<a class="mobile-nav-link" href="shop.html"><i class="fas fa-store"></i> Shop</a>
+<a class="mobile-nav-link" href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a class="mobile-nav-link active" href="health.html"><i class="fas fa-heartbeat"></i> Health</a>
+<a class="mobile-nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+<a class="mobile-nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a class="mobile-nav-link" href="cart.html"><i class="fas fa-shopping-bag"></i> Cart (<span class="js-cart-count">0</span>)</a>
+<a class="mobile-nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Account Login</a>
+</nav>
+</div>
+</div>
+<!-- MAIN CONTENT -->
+<main>
+<!-- HERO SECTION -->
+<section class="split-section" style="background: linear-gradient(135deg, #FFFFFF 0%, var(--bg-main) 100%);">
+<div class="container">
+<div class="split-grid">
+<div class="split-content hero-content">
+<span class="badge-tag mb-3"><i class="fas fa-book-medical"></i> Health &amp; Wellness Hub</span>
+<h1 class="hero-title">Your Guide to Better Health</h1>
+<p class="hero-desc">Simple, reliable healthcare information to help you make better everyday choices.</p>
+<a class="btn btn-primary btn-lg" href="404.html"><i class="fas fa-shopping-bag"></i> Shop Wellness Range</a>
+</div>
+<img alt="STACKLY Clinical Guidance" class="split-image" src="assets/images/13_health_and_wellness_guidance.webp"/ loading="lazy">
+</div>
+</div>
+</section>
+<!-- SECTION 1: DAILY WELLNESS TIPS -->
+<section class="section-padding">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Daily Wellness Tips</h2>
+<p class="section-subtitle">Fundamental lifestyle habits to build long-term immunity and vital energy.</p>
+</div>
+<div class="categories-grid js-animate-grid" style="grid-template-columns: repeat(3, 1fr);">
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-apple-alt"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Healthy Nutrition</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Fuel your immune system with antioxidant-rich foods, Vitamin C, and daily essential micronutrients.</p>
+</div>
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-moon"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Better Sleep</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Maintain consistent sleep routines and consider magnesium glycinate for deep, restorative REM sleep.</p>
+</div>
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-running"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Daily Exercise</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Keep joints active and blood pressure balanced with 30 minutes of moderate cardiovascular movement.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: MEDICINE SAFETY -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Medicine Safety</h2>
+<p class="section-subtitle">Essential guidelines for responsible medication management at home.</p>
+</div>
+<div class="categories-grid js-animate-grid" style="grid-template-columns: repeat(3, 1fr);">
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-shield-alt"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Safe Medication Use</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Always read warning labels carefully and consult your pharmacist regarding potential drug interactions.</p>
+</div>
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-balance-scale"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Understanding Dosage</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Never exceed prescribed limits. Use calibrated liquid measuring cups for pediatric syrups.</p>
+</div>
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-box-tissue"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Storage &amp; Expiry</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Store medicines in cool, dry places below 25°C and safely dispose of expired products annually.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: FAMILY HEALTH -->
+<section class="section-padding">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Family Health</h2>
+<p class="section-subtitle">Tailored healthcare resources for every generation in your home.</p>
+</div>
+<div class="categories-grid js-animate-grid" style="grid-template-columns: repeat(3, 1fr);">
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-baby-carriage"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Baby Care</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Tear-free organic cleansers, zinc barrier pastes, and hypoallergenic care for newborn skin.</p>
+</div>
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-female"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Women's Wellness</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Prenatal nutrition, hormonal balance multivitamins, and barrier hydration skincare routines.</p>
+</div>
+<div class="health-guide-card js-animate-card">
+<div class="health-card-icon"><i class="fas fa-user-friends"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Senior Care</h3>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Joint collagen supplements, automatic blood pressure monitoring, and organized daily medication routines.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW SECTION 1: INTERACTIVE BMI CALCULATOR WIDGET -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="split-grid" style="align-items: center;">
+<div class="split-content">
+<span class="badge-tag mb-3"><i class="fas fa-calculator"></i> Free Health Tool</span>
+<h2>Interactive BMI &amp; Vitality Calculator</h2>
+<p>Calculate your Body Mass Index (BMI) to understand your general body weight classification and get personalized clinical guidance.</p>
+<form id="bmi-calculator-form" style="background: var(--bg-main); padding: 24px; border-radius: 18px; border: 1px solid var(--border-color); margin-top: 16px;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+<div>
+<label style="font-size: 0.88rem; font-weight: 600; color: var(--secondary); display: block; margin-bottom: 6px;">Height (cm)</label>
+<input class="form-control" id="bmi-height" placeholder="e.g. 175" required="" type="number" value="175"/>
+</div>
+<div>
+<label style="font-size: 0.88rem; font-weight: 600; color: var(--secondary); display: block; margin-bottom: 6px;">Weight (kg)</label>
+<input class="form-control" id="bmi-weight" placeholder="e.g. 70" required="" type="number" value="70"/>
+</div>
+</div>
+<button class="btn btn-primary" id="calculate-bmi-btn" style="width: 100%;" type="button">
+<i class="fas fa-calculator"></i> Calculate My BMI
+                            </button>
+<div id="bmi-result-box" style="margin-top: 20px; padding: 16px; background: var(--white); border-radius: 12px; border: 1px solid var(--border-color); display: none;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<span style="font-weight: 700; color: var(--secondary);">Your Calculated BMI:</span>
+<span id="bmi-score-val" style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">22.9</span>
+</div>
+<div id="bmi-category-badge" style="margin-top: 8px; font-size: 0.9rem; font-weight: 600; color: var(--success);">
+                                    Classification: Normal Weight
+                                </div>
+</div>
+</form>
+</div>
+<div style="background-color: var(--white); padding: 32px; border-radius: 24px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+<h3 style="color: var(--secondary); margin-bottom: 16px; font-size: 1.25rem;">BMI Classification Reference:</h3>
+<ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 0.92rem;">
+<li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+<span>Below 18.5</span>
+<span style="font-weight: 700; color: var(--warning);">Underweight</span>
+</li>
+<li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+<span>18.5 – 24.9</span>
+<span style="font-weight: 700; color: var(--success);">Normal Weight</span>
+</li>
+<li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+<span>25.0 – 29.9</span>
+<span style="font-weight: 700; color: var(--warning);">Overweight</span>
+</li>
+<li style="display: flex; justify-content: space-between;">
+<span>30.0 or Higher</span>
+<span style="font-weight: 700; color: var(--danger);">Obese</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW SECTION 2: CLINICAL PHARMACIST Q&A SPOTLIGHT -->
+<section class="section-padding">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Ask Our Clinical Pharmacists</h2>
+<p class="section-subtitle">Expert answers to common patient questions regarding vitamins &amp; medications.</p>
+</div>
+<div class="trust-grid js-animate-grid" style="grid-template-columns: repeat(3, 1fr);">
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color); flex-direction: column; text-align: left; align-items: flex-start; padding: 28px;">
+<span class="badge-tag mb-2" style="background-color: var(--accent); color: var(--primary); font-weight: 700;">Vitamin Q&amp;A</span>
+<h4 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 8px;">"Can I take Vitamin D3 with Calcium?"</h4>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Yes! Vitamin D3 significantly enhances intestinal absorption of Calcium into bone tissue. Taking them together is clinically recommended.</p>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color); flex-direction: column; text-align: left; align-items: flex-start; padding: 28px;">
+<span class="badge-tag mb-2" style="background-color: var(--accent); color: var(--primary); font-weight: 700;">Storage Q&amp;A</span>
+<h4 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 8px;">"Should probiotics be kept refrigerated?"</h4>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Refrigeration preserves live CFUs (Colony Forming Units) longer, though shelf-stable micro-encapsulated strains remain effective below 25°C.</p>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color); flex-direction: column; text-align: left; align-items: flex-start; padding: 28px;">
+<span class="badge-tag mb-2" style="background-color: var(--accent); color: var(--primary); font-weight: 700;">Dosage Q&amp;A</span>
+<h4 style="font-size: 1.1rem; color: var(--secondary); margin-bottom: 8px;">"What is the best time to take Magnesium?"</h4>
+<p style="font-size: 0.9rem; color: var(--text-muted);">Magnesium Glycinate is best taken 30–60 minutes before bedtime as it relaxes neuromuscular tension and promotes deep restorative sleep.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: HEALTH ARTICLES -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Health Articles</h2>
+<p class="section-subtitle">Clinical insights and advice curated by licensed STACKLY healthcare professionals.</p>
+</div>
+<div class="categories-grid js-animate-grid" style="grid-template-columns: repeat(3, 1fr);">
+<!-- ARTICLE 1 -->
+<div class="health-article-card js-animate-card">
+<div class="article-img-box">
+<img alt="Medicine Storage" src="assets/images/article_cabinet_safety.webp"/ loading="lazy">
+</div>
+<div class="article-body">
+<span class="article-category">Medicine Safety</span>
+<h3 class="article-title">How to Safely Store OTC Medications at Home</h3>
+<p class="article-desc">Temperature, moisture, and light exposure directly alter medication potency. Learn ideal storage practices for parent cabinets.</p>
+<a class="article-read-btn" href="404.html">Read More <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- ARTICLE 2 -->
+<div class="health-article-card js-animate-card">
+<div class="article-img-box">
+<img alt="Magnesium Sleep" src="assets/images/article_magnesium_sleep.webp"/ loading="lazy">
+</div>
+<div class="article-body">
+<span class="article-category">Daily Wellness</span>
+<h3 class="article-title">Understanding Magnesium Glycinate for Sleep</h3>
+<p class="article-desc">Why bioavailable magnesium forms calm nervous tension and improve REM sleep quality without digestive irritation.</p>
+<a class="article-read-btn" href="404.html">Read More <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- ARTICLE 3 -->
+<div class="health-article-card js-animate-card">
+<div class="article-img-box">
+<img alt="BP Monitoring" src="assets/images/article_bp_measure.webp"/ loading="lazy">
+</div>
+<div class="article-body">
+<span class="article-category">Cardiovascular</span>
+<h3 class="article-title">5 Common Mistakes When Measuring Blood Pressure</h3>
+<p class="article-desc">Incorrect cuff size, crossed legs, or speaking during readings can distort systolic numbers significantly.</p>
+<a class="article-read-btn" href="404.html">Read More <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- ARTICLE 4 -->
+<div class="health-article-card js-animate-card">
+<div class="article-img-box">
+<img alt="Skincare Barrier" src="assets/images/article_skin_barrier.webp"/ loading="lazy">
+</div>
+<div class="article-body">
+<span class="article-category">Dermatology</span>
+<h3 class="article-title">Building a Barrier-Repair Skincare Routine</h3>
+<p class="article-desc">How ceramides, hyaluronic acid, and non-nano zinc oxide restore damaged skin barriers effectively.</p>
+<a class="article-read-btn" href="404.html">Read More <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- ARTICLE 5 -->
+<div class="health-article-card js-animate-card">
+<div class="article-img-box">
+<img alt="Infant Hygiene" src="assets/images/article_infant_hygiene.webp"/ loading="lazy">
+</div>
+<div class="article-body">
+<span class="article-category">Family Health</span>
+<h3 class="article-title">Infant Hygiene &amp; Preventing Diaper Rash</h3>
+<p class="article-desc">Pediatrician recommendations for gentle organic cleansing and protective barrier ointments.</p>
+<a class="article-read-btn" href="404.html">Read More <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- ARTICLE 6 -->
+<div class="health-article-card js-animate-card">
+<div class="article-img-box">
+<img alt="First Aid Kit" src="assets/images/article_first_aid.webp"/ loading="lazy">
+</div>
+<div class="article-body">
+<span class="article-category">First Aid Protocol</span>
+<h3 class="article-title">Home Emergency Kit Preparation Checklist</h3>
+<p class="article-desc">Essential items every household must keep ready including sterile dressing, shears, and antiseptics.</p>
+<a class="article-read-btn" href="404.html">Read More <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+</a>
+<p>Trusted Healthcare. Delivered with Care. Sourcing certified pharmaceuticals and wellness essentials to safeguard family health nationwide.</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-btn" href="404.html"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Twitter" class="social-btn" href="404.html"><i class="fab fa-twitter"></i></a>
+<a aria-label="Instagram" class="social-btn" href="404.html"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-btn" href="404.html"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="404.html">Shop Medicines</a>
+<a href="categories.html">Health Categories</a>
+<a href="health.html">Health Guides</a>
+<a href="about.html">About STACKLY</a>
+<a href="contact.html">Contact Support</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Popular Categories</h4>
+<div class="footer-links">
+<a href="404.html">OTC Medicines</a>
+<a href="404.html">Vitamins &amp; Supplements</a>
+<a href="404.html">Dermatology &amp; Skin</a>
+<a href="404.html">Baby Care &amp; Formulas</a>
+<a href="404.html">Medical Equipment</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<div class="footer-contact-info" style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-envelope" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> info@stackly.com</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> 9999900000</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> MMR Complex, Chinna Tirupathi, near by Chinna Muniyappan Kovil, Salem 636008</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 STACKLY Pharmacy Store. All rights reserved.</p>
+<p>Designed with care for superior healthcare access.</p>
+</div>
+</div>
+</footer>
+<!-- GLOBAL SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+<div class="modal-card search-modal-card">
+<button aria-label="Close Search" class="modal-close-btn search-modal-close">×</button>
+<div class="search-input-header">
+<i class="fas fa-search text-teal"></i>
+<input autocomplete="off" id="global-search-input" placeholder="Search medicines, vitamins, skincare..." type="text"/>
+</div>
+<div class="search-results-list" id="global-search-results">
+<div class="search-placeholder">
+<i class="fas fa-search"></i>
+<p>Type at least 2 characters to search products...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+<script src="js/health-animations.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('calculate-bmi-btn');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const h = parseFloat(document.getElementById('bmi-height').value) / 100;
+                    const w = parseFloat(document.getElementById('bmi-weight').value);
+
+                    if (h > 0 && w > 0) {
+                        const bmi = (w / (h * h)).toFixed(1);
+                        const resultBox = document.getElementById('bmi-result-box');
+                        const scoreVal = document.getElementById('bmi-score-val');
+                        const badge = document.getElementById('bmi-category-badge');
+
+                        scoreVal.textContent = bmi;
+                        resultBox.style.display = 'block';
+
+                        if (bmi < 18.5) {
+                            badge.textContent = 'Classification: Underweight';
+                            badge.style.color = 'var(--warning)';
+                        } else if (bmi <= 24.9) {
+                            badge.textContent = 'Classification: Normal Weight';
+                            badge.style.color = 'var(--success)';
+                        } else if (bmi <= 29.9) {
+                            badge.textContent = 'Classification: Overweight';
+                            badge.style.color = 'var(--warning)';
+                        } else {
+                            badge.textContent = 'Classification: Obese';
+                            badge.style.color = 'var(--danger)';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

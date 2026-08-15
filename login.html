@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Login - STACKLY Healthcare</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="customer/css/customer.css" rel="stylesheet"/>
+<script src="customer/js/customer-auth.js"></script>
+</head>
+<body class="customer-body">
+<div class="auth-wrapper">
+<div class="auth-card js-animate-auth" style="padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); text-align: center; width: 100%; max-width: 450px; background: var(--white);">
+<div style="margin-bottom: 24px;">
+<a class="brand-logo" href="index.html" style="display: inline-block; margin-bottom: 15px;">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<h2 style="margin-top: 10px; color: var(--secondary); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;">Welcome Back</h2>
+</div>
+<form id="customer-login-form">
+<div class="form-group" style="text-align: left; margin-bottom: 16px;">
+<input class="form-control" id="login-email" placeholder="Email Address" required="" style="border-radius: 30px; padding: 14px 20px; background-color: #f0f2f5; border: 1px solid #e1e5eb;" type="email"/>
+</div>
+<div class="form-group" style="text-align: left; margin-bottom: 16px;">
+<input class="form-control" id="login-password" placeholder="Password" required="" style="border-radius: 30px; padding: 14px 20px; background-color: #f0f2f5; border: 1px solid #e1e5eb;" type="password"/>
+</div>
+<div class="form-group" style="text-align: left; margin-bottom: 16px;">
+<select class="form-control" id="login-role" required="" style="border-radius: 30px; padding: 14px 20px; background-color: #f0f2f5; border: 1px solid #e1e5eb; color: #555; appearance: none;">
+<option disabled="" selected="" value="">Select Role</option>
+<option value="customer">Customer</option>
+<option value="admin">Administrator</option>
+</select>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; font-size: 0.9rem;">
+<label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--text-muted);">
+<input id="remember-me" style="accent-color: var(--primary);" type="checkbox"/> Remember Me
+                    </label>
+<a href="404.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Forgot Password</a>
+</div>
+<div id="login-error" style="color: var(--danger); font-size: 0.85rem; margin-bottom: 15px; display: none;">Invalid email or password.</div>
+<button class="btn btn-primary" style="width: 100%; border-radius: 30px; padding: 14px; font-weight: 600; font-size: 1rem;" type="submit">Login</button>
+<div style="display: flex; align-items: center; margin: 24px 0; color: var(--text-muted); font-size: 0.9rem;">
+<hr style="flex-grow: 1; border: none; border-top: 1px solid #e1e5eb;"/>
+<span style="padding: 0 12px; background: #fff; border-radius: 50%; border: 1px solid #e1e5eb; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin: 0 -18px; z-index: 2; position: relative;">or</span>
+<hr style="flex-grow: 1; border: none; border-top: 1px solid #e1e5eb;"/>
+</div>
+<button class="btn btn-outline" style="width: 100%; border-radius: 30px; padding: 14px; font-weight: 600; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 10px; border-color: #cbd5e1; color: var(--secondary);" type="button" onclick="window.location.href='404.html'">
+<i class="fab fa-google"></i> Login with Google
+                </button>
+<div style="margin-top: 28px; font-size: 0.95rem; color: var(--text-muted);">
+                    Don't have an account? <a href="signup.html" style="color: var(--primary); font-weight: 700; text-decoration: none; margin-left: 4px;">Sign Up</a>
+</div>
+</form>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from('.js-animate-auth', { y: 30, opacity: 0, duration: 0.8, ease: 'power3.out' });
+            
+            document.getElementById('customer-login-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const pass = document.getElementById('login-password').value;
+                const role = document.getElementById('login-role').value;
+                
+                // Save the email to localStorage to use as the profile name
+                localStorage.setItem('loggedInUser', email);
+                
+                if (role === 'admin') {
+                    window.location.href = 'admin.html';
+                } else if (role === 'customer') {
+                    window.location.href = 'customer-dashboard.html';
+                } else {
+                    document.getElementById('login-error').style.display = 'block';
+                    document.getElementById('login-error').innerText = 'Please select a valid role.';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

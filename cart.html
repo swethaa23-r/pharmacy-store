@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shopping Cart - STACKLY</title>
+<meta content="View your STACKLY healthcare cart, adjust quantities, apply promo codes, and proceed to secure checkout." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- CSS Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<!-- SITE HEADER -->
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<nav class="desktop-nav">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="shop.html">Shop</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="health.html">Health</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" href="login.html" style="padding: 8px 16px; font-weight: 500; font-size: 0.9rem; border-radius: var(--radius-pill); margin-right: 10px;">Login</a>
+<a aria-label="View Cart" class="icon-action-btn active" href="cart.html">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-badge js-cart-count">0</span>
+</a>
+<button aria-label="Open Navigation Menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MOBILE NAVIGATION OVERLAY -->
+<div class="mobile-nav-overlay">
+<div class="mobile-nav-drawer">
+<div class="mobile-nav-header">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<button aria-label="Close Menu" class="mobile-nav-close">×</button>
+</div>
+<nav class="mobile-nav-links">
+<a class="mobile-nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+<a class="mobile-nav-link" href="shop.html"><i class="fas fa-store"></i> Shop</a>
+<a class="mobile-nav-link" href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a class="mobile-nav-link" href="health.html"><i class="fas fa-heartbeat"></i> Health</a>
+<a class="mobile-nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+<a class="mobile-nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a class="mobile-nav-link active" href="cart.html"><i class="fas fa-shopping-bag"></i> Cart (<span class="js-cart-count">0</span>)</a>
+<a class="mobile-nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Account Login</a>
+</nav>
+</div>
+</div>
+<!-- MAIN CONTENT -->
+<main>
+<!-- PAGE HERO -->
+<section class="page-hero" style="padding: 40px 0;">
+<div class="container">
+<h1>Your Healthcare Cart</h1>
+<p>Review your selected medicines, vitamins, and healthcare essentials.</p>
+</div>
+<div class="hero-wave-divider">
+<svg data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path class="shape-fill" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.69,38,154.51,75,233.15,80.12,263.26,82.08,293.18,73.1,321.39,56.44Z"></path>
+</svg>
+</div>
+</section>
+<!-- CART CONTENT SECTION -->
+<section class="section-padding">
+<div class="container">
+<div class="cart-layout-grid">
+<!-- CART ITEMS CONTAINER (DYNAMICALLY POPULATED BY JS) -->
+<div class="cart-items-main" id="cart-items-container">
+<!-- Populated by js/main.js or shows Empty State if cart is 0 -->
+</div>
+<!-- ORDER SUMMARY PANEL -->
+<div class="cart-summary-panel" id="cart-summary-box">
+<div class="summary-card">
+<h3 class="summary-title"><i class="fas fa-receipt text-teal"></i> Order Summary</h3>
+<div class="summary-row">
+<span>Subtotal</span>
+<span id="summary-subtotal">$0.00</span>
+</div>
+<div class="summary-row">
+<span>Delivery</span>
+<span id="summary-shipping" style="color: var(--primary); font-weight: 700;">FREE</span>
+</div>
+<div class="summary-row" id="summary-discount-row" style="display: none; color: var(--success);">
+<span>Discount</span>
+<span id="summary-discount">-$0.00</span>
+</div>
+<hr style="margin: 16px 0; border: none; border-top: 1px solid var(--border-color);"/>
+<div class="summary-row total-row">
+<span>Total</span>
+<span id="summary-total" style="font-size: 1.5rem; color: var(--secondary); font-weight: 800;">$0.00</span>
+</div>
+<!-- PROMO CODE INPUT -->
+<div class="promo-box" style="margin-top: 20px;">
+<label for="promo-input" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Promo Code</label>
+<div style="display: flex; gap: 8px; margin-top: 6px;">
+<input class="form-control" id="promo-input" placeholder="e.g. PHAR20" style="text-transform: uppercase;" type="text"/>
+<button class="btn btn-outline" id="apply-promo-btn">Apply</button>
+</div>
+<div id="promo-message" style="margin-top: 6px; font-size: 0.8rem;"></div>
+</div>
+<!-- BUTTONS -->
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px;">
+<button class="btn btn-primary btn-lg" id="proceed-checkout-btn" style="width: 100%;">
+<i class="fas fa-lock"></i> Proceed to Checkout
+                                </button>
+<a class="btn btn-outline" href="shop.html" style="width: 100%; text-align: center;">
+<i class="fas fa-arrow-left"></i> Continue Shopping
+                                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- CHECKOUT MODAL -->
+<div class="modal-overlay" id="checkout-modal">
+<div class="modal-card" style="max-width: 600px;">
+<button aria-label="Close Checkout" class="modal-close-btn checkout-modal-close">×</button>
+<h2 style="color: var(--secondary); margin-bottom: 6px; font-size: 1.5rem;">Secure Express Checkout</h2>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Enter your delivery address and payment choice to finalize your STACKLY order.</p>
+<form id="checkout-form">
+<div class="form-group">
+<label for="chk-name">Full Name *</label>
+<input class="form-control" id="chk-name" placeholder="Jane Doe" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="chk-address">Shipping Address *</label>
+<input class="form-control" id="chk-address" placeholder="123 Health Ave, Suite 100" required="" type="text"/>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+<div class="form-group">
+<label for="chk-city">City *</label>
+<input class="form-control" id="chk-city" placeholder="New York" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="chk-zip">ZIP / Postal Code *</label>
+<input class="form-control" id="chk-zip" placeholder="10001" required="" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label>Payment Method</label>
+<div style="display: flex; gap: 16px; margin-top: 8px;">
+<label style="display: flex; align-items: center; gap: 6px; font-size: 0.9rem; cursor: pointer;">
+<input checked="" name="payment" style="accent-color: var(--primary);" type="radio" value="card"/> Credit / Debit Card
+                        </label>
+<label style="display: flex; align-items: center; gap: 6px; font-size: 0.9rem; cursor: pointer;">
+<input name="payment" style="accent-color: var(--primary);" type="radio" value="cod"/> Cash on Delivery
+                        </label>
+</div>
+</div>
+<button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 16px;" type="submit">
+<i class="fas fa-check-circle"></i> Place Order Now
+                </button>
+</form>
+</div>
+</div>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+</a>
+<p>Trusted Healthcare. Delivered with Care. Sourcing certified pharmaceuticals and wellness essentials to safeguard family health nationwide.</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-btn" href="404.html"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Twitter" class="social-btn" href="404.html"><i class="fab fa-twitter"></i></a>
+<a aria-label="Instagram" class="social-btn" href="404.html"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-btn" href="404.html"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="404.html">Shop Medicines</a>
+<a href="categories.html">Health Categories</a>
+<a href="health.html">Health Guides</a>
+<a href="about.html">About STACKLY</a>
+<a href="contact.html">Contact Support</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Popular Categories</h4>
+<div class="footer-links">
+<a href="404.html">OTC Medicines</a>
+<a href="404.html">Vitamins &amp; Supplements</a>
+<a href="404.html">Dermatology &amp; Skin</a>
+<a href="404.html">Baby Care &amp; Formulas</a>
+<a href="404.html">Medical Equipment</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<div class="footer-contact-info" style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-envelope" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> info@stackly.com</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> 9999900000</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> MMR Complex, Chinna Tirupathi, near by Chinna Muniyappan Kovil, Salem 636008</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 STACKLY Pharmacy Store. All rights reserved.</p>
+<p>Designed with care for superior healthcare access.</p>
+</div>
+</div>
+</footer>
+<!-- GLOBAL SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+<div class="modal-card search-modal-card">
+<button aria-label="Close Search" class="modal-close-btn search-modal-close">×</button>
+<div class="search-input-header">
+<i class="fas fa-search text-teal"></i>
+<input autocomplete="off" id="global-search-input" placeholder="Search medicines, vitamins, skincare..." type="text"/>
+</div>
+<div class="search-results-list" id="global-search-results">
+<div class="search-placeholder">
+<i class="fas fa-search"></i>
+<p>Type at least 2 characters to search products...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

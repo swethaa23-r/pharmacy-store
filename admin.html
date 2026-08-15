@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STACKLY Admin Portal - Pharmacy Management System</title>
+<meta content="STACKLY Admin Portal for pharmacy store managers to track orders, manage prescription verification, monitor inventory, and review sales analytics." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- CSS Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/admin.css" rel="stylesheet"/>
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-body">
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<div class="admin-wrapper">
+<!-- OVERLAY -->
+<div class="admin-sidebar-overlay"></div>
+<!-- FIXED SIDEBAR -->
+<aside class="admin-sidebar" id="admin-sidebar">
+<div class="admin-sidebar-header">
+<div style="display: flex; flex-direction: column; align-items: flex-start;">
+<a class="brand-logo" href="admin.html" style="margin-bottom: 0;">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--light); opacity: 0.7; margin-left: 45px; margin-top: -8px;">Admin</span>
+</div>
+<button aria-label="Close Sidebar" class="mobile-nav-close" id="admin-sidebar-close" style="color: var(--white); display: none;">×</button>
+</div>
+<nav class="admin-nav">
+<a class="admin-nav-item active" data-section="dashboard">
+<i class="fas fa-chart-line"></i> Dashboard
+                </a>
+<a class="admin-nav-item" data-section="products">
+<i class="fas fa-pills"></i> Products
+                </a>
+<a class="admin-nav-item" data-section="categories">
+<i class="fas fa-th-large"></i> Categories
+                </a>
+<a class="admin-nav-item" data-section="orders">
+<i class="fas fa-shopping-bag"></i> Orders
+                </a>
+<a class="admin-nav-item" data-section="customers">
+<i class="fas fa-users"></i> Customers
+                </a>
+<a class="admin-nav-item" data-section="prescriptions">
+<i class="fas fa-file-prescription"></i> Prescriptions
+                </a>
+<a class="admin-nav-item" data-section="inventory">
+<i class="fas fa-boxes"></i> Inventory
+                </a>
+<a class="admin-nav-item" data-section="reviews">
+<i class="fas fa-star"></i> Reviews
+                </a>
+<a class="admin-nav-item" data-section="reports">
+<i class="fas fa-file-invoice-dollar"></i> Reports
+                </a>
+<a class="admin-nav-item" data-section="settings">
+<i class="fas fa-cog"></i> Settings
+                </a>
+</nav>
+<div class="admin-sidebar-footer">
+<a class="admin-nav-item" data-section="logout" style="color: var(--danger-light, #FEB2B2);">
+<i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+</div>
+</aside>
+<!-- MAIN CONTENT AREA -->
+<main class="admin-main">
+<!-- TOP HEADER BAR -->
+<header class="admin-header">
+<div class="admin-header-left">
+<a href="index.html" class="admin-mobile-logo" style="display: none; font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; align-items: center; gap: 8px;">
+<i class="fas fa-prescription-bottle-alt"></i> STACKLY
+</a>
+<h1 class="admin-page-title" id="admin-page-title">Dashboard</h1>
+</div>
+<div class="admin-header-actions">
+<div class="admin-search-box">
+<i class="fas fa-search"></i>
+<input id="admin-global-search" placeholder="Search orders, customers, products..." type="text" onkeypress="if(event.key === 'Enter' && this.value.trim() !== '') window.location.href='404.html';"/>
+</div>
+<div class="admin-profile-btn" id="admin-profile-btn">
+<i class="fas fa-user-circle admin-avatar" style="font-size: 36px; color: var(--primary); display: flex; align-items: center; justify-content: center;"></i>
+<div class="admin-profile-info">
+<span class="admin-profile-name">Dr. Sarah Jenkins</span>
+<span class="admin-profile-role">Chief Pharmacist Admin</span>
+</div>
+<!-- PROFILE DROPDOWN -->
+<div class="dropdown-menu-custom" id="admin-profile-dropdown">
+</div>
+</div>
+<button aria-label="Toggle Sidebar" class="admin-mobile-toggle" id="admin-mobile-toggle">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</header>
+<!-- MAIN CONTENT SECTIONS -->
+<div class="admin-content">
+<!-- 1. DASHBOARD OVERVIEW SECTION -->
+<section class="admin-section active" id="section-dashboard">
+<!-- WELCOME BANNER -->
+<div class="admin-welcome-banner js-animate-card">
+<div>
+<h2 id="admin-greeting">Good Morning, Admin</h2>
+<p>Here's what's happening with your pharmacy store today.</p>
+</div>
+<span class="badge-tag" style="background: rgba(255, 255, 255, 0.2); color: var(--white); border: none; font-weight: 700;">
+<i class="fas fa-calendar-alt"></i> August 13, 2026
+                        </span>
+</div>
+<!-- STATISTICS CARDS (4 COLUMNS) -->
+<div class="admin-stats-grid js-animate-grid">
+<!-- STAT 1: TOTAL ORDERS -->
+<div class="admin-stat-card js-animate-card">
+<div class="admin-stat-icon"><i class="fas fa-shopping-bag"></i></div>
+<div class="admin-stat-info">
+<span class="admin-stat-title">Total Orders</span>
+<div class="admin-stat-num js-admin-counter" data-target="1248">0</div>
+<span class="admin-stat-change up"><i class="fas fa-arrow-up"></i> +12.5% vs last month</span>
+</div>
+</div>
+<!-- STAT 2: TOTAL REVENUE -->
+<div class="admin-stat-card js-animate-card">
+<div class="admin-stat-icon"><i class="fas fa-dollar-sign"></i></div>
+<div class="admin-stat-info">
+<span class="admin-stat-title">Total Revenue</span>
+<div class="admin-stat-num js-admin-counter" data-prefix="$" data-target="48920">0</div>
+<span class="admin-stat-change up"><i class="fas fa-arrow-up"></i> +18.2% vs last month</span>
+</div>
+</div>
+<!-- STAT 3: TOTAL CUSTOMERS -->
+<div class="admin-stat-card js-animate-card">
+<div class="admin-stat-icon"><i class="fas fa-users"></i></div>
+<div class="admin-stat-info">
+<span class="admin-stat-title">Total Customers</span>
+<div class="admin-stat-num js-admin-counter" data-target="3420">0</div>
+<span class="admin-stat-change up"><i class="fas fa-arrow-up"></i> +8.4% vs last month</span>
+</div>
+</div>
+<!-- STAT 4: TOTAL PRODUCTS -->
+<div class="admin-stat-card js-animate-card">
+<div class="admin-stat-icon"><i class="fas fa-pills"></i></div>
+<div class="admin-stat-info">
+<span class="admin-stat-title">Total Products</span>
+<div class="admin-stat-num js-admin-counter" data-target="184">0</div>
+<span class="admin-stat-change up"><i class="fas fa-arrow-up"></i> +4.1% vs last month</span>
+</div>
+</div>
+</div>
+<!-- REVENUE CHART & PRESCRIPTION OVERVIEW GRID -->
+<div class="admin-grid-2col">
+<!-- REVENUE CHART CARD -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-chart-area text-teal"></i> Revenue Performance</h3>
+<div style="display: flex; gap: 8px;">
+<button class="btn btn-primary btn-sm chart-filter-btn" data-chart="weekly">Weekly</button>
+<button class="btn btn-outline btn-sm chart-filter-btn" data-chart="monthly">Monthly</button>
+<button class="btn btn-outline btn-sm chart-filter-btn" data-chart="yearly">Yearly</button>
+</div>
+</div>
+<div style="height: 300px; position: relative;">
+<canvas id="revenueChart"></canvas>
+</div>
+</div>
+<!-- PRESCRIPTION MANAGEMENT CARD -->
+<div class="admin-card" style="display: flex; flex-direction: column;">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-file-prescription text-teal"></i> Prescriptions</h3>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; flex-grow: 1;">
+<div style="display: flex; justify-content: space-between; padding: 12px; background: var(--bg-main); border-radius: var(--radius-md);">
+<span style="font-weight: 600;">Awaiting Verification</span>
+<span class="status-badge pending">3 Pending</span>
+</div>
+<div style="display: flex; justify-content: space-between; padding: 12px; background: var(--bg-main); border-radius: var(--radius-md);">
+<span style="font-weight: 600;">Approved Today</span>
+<span class="status-badge delivered">18 Approved</span>
+</div>
+<div style="display: flex; justify-content: space-between; padding: 12px; background: var(--bg-main); border-radius: var(--radius-md);">
+<span style="font-weight: 600;">Rejected (Invalid Rx)</span>
+<span class="status-badge cancelled">2 Rejected</span>
+</div>
+<button class="btn btn-primary btn-block js-review-rx" style="margin-top: auto;" onclick="window.location.href='404.html'">
+<i class="fas fa-clipboard-check"></i> Review Prescriptions
+                                </button>
+</div>
+</div>
+</div>
+<!-- LOW STOCK ALERT & BEST SELLING PRODUCTS -->
+<div class="admin-grid-2col">
+<!-- LOW STOCK ALERT -->
+<div class="admin-card" style="border-left: 4px solid var(--warning, #DD6B20);">
+<div class="admin-card-header">
+<h3 class="admin-card-title" style="color: #9C4221;">
+<i class="fas fa-exclamation-triangle text-amber"></i> Low Stock Alert
+                                </h3>
+<button class="btn btn-outline btn-sm js-manage-inv" onclick="window.location.href='404.html'">Manage Inventory</button>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr>
+<th>Product</th>
+<th>Current Stock</th>
+<th>Min Stock</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="font-weight: 600;">Digital Pulse Oximeter</td>
+<td style="color: var(--danger); font-weight: 700;">2 units</td>
+<td>10 units</td>
+<td><span class="status-badge out-stock">Low Stock</span></td>
+</tr>
+<tr>
+<td style="font-weight: 600;">Liposomal Vitamin C 1000mg</td>
+<td style="color: var(--warning); font-weight: 700;">5 units</td>
+<td>15 units</td>
+<td><span class="status-badge low-stock">Low Stock</span></td>
+</tr>
+<tr>
+<td style="font-weight: 600;">Hyaluronic Acid Serum 30ml</td>
+<td style="color: var(--danger); font-weight: 700;">0 units</td>
+<td>12 units</td>
+<td><span class="status-badge out-stock">Out of Stock</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- BEST SELLING PRODUCTS -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-award text-teal"></i> Best Selling Products</h3>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px;">
+<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--border-color);">
+<div style="display: flex; align-items: center; gap: 12px;">
+<img alt="Vitamin C" src="assets/images/03_liposomal_vitamin_c_1000mg.webp" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;"/ loading="lazy">
+<div>
+<h4 style="margin: 0; font-size: 0.92rem; color: var(--secondary);">Liposomal Vitamin C</h4>
+<span style="font-size: 0.78rem; color: var(--text-muted);">Vitamins</span>
+</div>
+</div>
+<div style="text-align: right;">
+<span style="font-weight: 700; display: block; font-size: 0.9rem;">480 sold</span>
+<span style="font-size: 0.8rem; color: var(--primary);">$11,995</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--border-color);">
+<div style="display: flex; align-items: center; gap: 12px;">
+<img alt="Paracetamol" src="assets/images/01_paracetamol_extra_500mg.webp" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;"/ loading="lazy">
+<div>
+<h4 style="margin: 0; font-size: 0.92rem; color: var(--secondary);">Paracetamol 500mg</h4>
+<span style="font-size: 0.78rem; color: var(--text-muted);">Medicines</span>
+</div>
+</div>
+<div style="text-align: right;">
+<span style="font-weight: 700; display: block; font-size: 0.9rem;">620 sold</span>
+<span style="font-size: 0.8rem; color: var(--primary);">$5,573</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<img alt="Oximeter" src="assets/images/07_digital_pulse_oximeter.webp" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;"/ loading="lazy">
+<div>
+<h4 style="margin: 0; font-size: 0.92rem; color: var(--secondary);">Digital Oximeter</h4>
+<span style="font-size: 0.78rem; color: var(--text-muted);">Medical Devices</span>
+</div>
+</div>
+<div style="text-align: right;">
+<span style="font-weight: 700; display: block; font-size: 0.9rem;">210 sold</span>
+<span style="font-size: 0.8rem; color: var(--primary);">$7,347</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RECENT ORDERS TABLE -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-clock text-teal"></i> Recent Customer Orders</h3>
+<button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">View All Orders</button>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Customer</th>
+<th>Product</th>
+<th>Date</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>#ORD-9842</strong></td>
+<td>Emily Davis</td>
+<td>Liposomal Vitamin C 1000mg</td>
+<td>Aug 13, 2026</td>
+<td>$24.99</td>
+<td><span class="status-badge processing">Processing</span></td>
+<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9842 details');"><i class="fas fa-eye"></i></button></td>
+</tr>
+<tr>
+<td><strong>#ORD-9841</strong></td>
+<td>Michael Brown</td>
+<td>Digital Pulse Oximeter</td>
+<td>Aug 13, 2026</td>
+<td>$34.99</td>
+<td><span class="status-badge shipped">Shipped</span></td>
+<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9841 details');"><i class="fas fa-eye"></i></button></td>
+</tr>
+<tr>
+<td><strong>#ORD-9840</strong></td>
+<td>Sophia Wilson</td>
+<td>Paracetamol Extra 500mg</td>
+<td>Aug 12, 2026</td>
+<td>$8.99</td>
+<td><span class="status-badge delivered">Delivered</span></td>
+<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9840 details');"><i class="fas fa-eye"></i></button></td>
+</tr>
+<tr>
+<td><strong>#ORD-9839</strong></td>
+<td>James Taylor</td>
+<td>Hyaluronic Acid Serum 30ml</td>
+<td>Aug 12, 2026</td>
+<td>$29.99</td>
+<td><span class="status-badge pending">Pending</span></td>
+<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9839 details');"><i class="fas fa-eye"></i></button></td>
+</tr>
+<tr>
+<td><strong>#ORD-9838</strong></td>
+<td>Olivia Anderson</td>
+<td>Magnesium Glycinate 400mg</td>
+<td>Aug 11, 2026</td>
+<td>$19.99</td>
+<td><span class="status-badge cancelled">Cancelled</span></td>
+<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9838 details');"><i class="fas fa-eye"></i></button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- 2. PRODUCTS MANAGEMENT SECTION -->
+<section class="admin-section" id="section-products">
+<!-- 1. Inventory Table -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-pills text-teal"></i> Pharmacy Product Catalog</h3>
+<button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-plus"></i> Add New Product</button>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr>
+<th>ID</th>
+<th>Product Name</th>
+<th>Category</th>
+<th>Price</th>
+<th>Stock</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>#P-01</td><td>Paracetamol Extra 500mg</td><td>Medicines</td><td>$8.99</td><td>140 units</td><td><span class="status-badge delivered">Active</span></td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Edit</button></td></tr>
+<tr><td>#P-02</td><td>Liposomal Vitamin C 1000mg</td><td>Vitamins</td><td>$24.99</td><td>45 units</td><td><span class="status-badge delivered">Active</span></td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Edit</button></td></tr>
+<tr><td>#P-03</td><td>Digital Pulse Oximeter</td><td>Medical Devices</td><td>$34.99</td><td>2 units</td><td><span class="status-badge low-stock">Low Stock</span></td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Edit</button></td></tr>
+<tr><td>#P-04</td><td>Hyaluronic Acid Serum 30ml</td><td>Skin Care</td><td>$29.99</td><td>0 units</td><td><span class="status-badge out-stock">Out of Stock</span></td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Edit</button></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Add New Product Quick Form -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-plus-circle text-teal"></i> Quick Add Product</h3>
+</div>
+<form>
+<div class="form-group mb-2"><input class="form-control" placeholder="Product Name" type="text"/></div>
+<div class="form-group mb-2"><input class="form-control" placeholder="Price ($)" type="number"/></div>
+<button class="btn btn-primary w-100" type="button" onclick="window.location.href='404.html'">Add Product</button>
+</form>
+</div>
+<!-- 3. Low Stock Alerts -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-exclamation-triangle text-danger"></i> Low Stock Alerts</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Digital Pulse Oximeter</span> <span class="text-danger">2 left</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Hyaluronic Acid Serum</span> <span class="text-danger">Out of stock</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 3. CATEGORIES SECTION -->
+<section class="admin-section" id="section-categories">
+<!-- 1. Categories Grid -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-th-large text-teal"></i> Health Categories</h3>
+</div>
+<div class="admin-grid-thirds">
+<div class="category-card"><h4 style="color: var(--secondary);">Medicines</h4><p>42 Products Cataloged</p></div>
+<div class="category-card"><h4 style="color: var(--secondary);">Vitamins</h4><p>38 Products Cataloged</p></div>
+<div class="category-card"><h4 style="color: var(--secondary);">Personal Care</h4><p>25 Products Cataloged</p></div>
+<div class="category-card"><h4 style="color: var(--secondary);">Skin Care</h4><p>30 Products Cataloged</p></div>
+<div class="category-card"><h4 style="color: var(--secondary);">Medical Devices</h4><p>18 Products Cataloged</p></div>
+<div class="category-card"><h4 style="color: var(--secondary);">First Aid</h4><p>15 Products Cataloged</p></div>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Create Category Form -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-folder-plus text-teal"></i> Create Category</h3>
+</div>
+<form>
+<div class="form-group mb-2"><input class="form-control" placeholder="Category Name" type="text"/></div>
+<div class="form-group mb-2"><textarea class="form-control" placeholder="Description" rows="2"></textarea></div>
+<button class="btn btn-primary w-100" type="button" onclick="window.location.href='404.html'">Save Category</button>
+</form>
+</div>
+<!-- 3. Category Performance -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-chart-pie text-teal"></i> Top Categories</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Medicines</span> <span>45% of Sales</span></li>
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Vitamins</span> <span>30% of Sales</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Skin Care</span> <span>15% of Sales</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 4. ORDERS SECTION -->
+<section class="admin-section" id="section-orders">
+<!-- 1. All Orders Table -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-shopping-bag text-teal"></i> Order Processing Queue</h3>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Amount</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr><td>#ORD-9842</td><td>Sarah Mitchell</td><td>Today</td><td>$24.99</td><td><span class="status-badge pending">Processing</span></td></tr>
+<tr><td>#ORD-9841</td><td>Michael Brown</td><td>Yesterday</td><td>$89.50</td><td><span class="status-badge delivered">Shipped</span></td></tr>
+<tr><td>#ORD-9840</td><td>Emily Davis</td><td>Aug 10</td><td>$15.00</td><td><span class="status-badge delivered">Delivered</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Order Statistics -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-chart-line text-teal"></i> Order Statistics</h3>
+</div>
+<div style="display: flex; justify-content: space-around; text-align: center; margin-top: 10px;">
+<div><h2 style="color: var(--primary);">24</h2><p class="text-muted">Pending</p></div>
+<div><h2 style="color: var(--primary);">12</h2><p class="text-muted">Shipped</p></div>
+<div><h2 style="color: var(--primary);">145</h2><p class="text-muted">Completed</p></div>
+</div>
+</div>
+<!-- 3. Urgent Orders -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-bell text-danger"></i> Urgent Orders</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>#ORD-9838 (Next-day)</span> <button class="btn btn-outline btn-sm">Process</button></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>#ORD-9835 (Late)</span> <button class="btn btn-outline btn-sm">Process</button></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 5. CUSTOMERS SECTION -->
+<section class="admin-section" id="section-customers">
+<!-- 1. Customer Directory Table -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-users text-teal"></i> Patient &amp; Customer Directory</h3>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr><th>Customer</th><th>Email</th><th>Total Orders</th><th>Spent</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr><td>Emily Davis</td><td>emily@example.com</td><td>14 Orders</td><td>$420.50</td><td><span class="status-badge delivered">Verified</span></td></tr>
+<tr><td>Michael Brown</td><td>michael@example.com</td><td>8 Orders</td><td>$289.00</td><td><span class="status-badge delivered">Verified</span></td></tr>
+<tr><td>Sophia Wilson</td><td>sophia@example.com</td><td>22 Orders</td><td>$840.10</td><td><span class="status-badge delivered">Verified VIP</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. New Signups -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-user-plus text-teal"></i> New Signups</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>John Doe</span> <span>Today</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Jane Smith</span> <span>Yesterday</span></li>
+</ul>
+</div>
+<!-- 3. Top Customers -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-crown text-teal"></i> Top Customers</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Sophia Wilson</span> <span>$840.10</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Emily Davis</span> <span>$420.50</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 6. PRESCRIPTIONS SECTION -->
+<section class="admin-section" id="section-prescriptions">
+<!-- 1. Prescription Verification Queue -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-file-prescription text-teal"></i> Prescription Verification Queue</h3>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr><th>Rx ID</th><th>Patient</th><th>Doctor</th><th>Date Submitted</th><th>Action</th></tr>
+</thead>
+<tbody>
+<tr><td>#RX-9912</td><td>Sarah Mitchell</td><td>Dr. Alan Grant</td><td>Today</td><td><button class="btn btn-primary btn-sm">Verify</button></td></tr>
+<tr><td>#RX-9911</td><td>Emily Davis</td><td>Dr. Ellie Sattler</td><td>Yesterday</td><td><button class="btn btn-primary btn-sm">Verify</button></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Recently Approved -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-check-circle text-teal"></i> Recently Approved</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>#RX-9905</span> <span class="text-muted">Approved by Admin</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>#RX-9904</span> <span class="text-muted">Approved by Admin</span></li>
+</ul>
+</div>
+<!-- 3. Expiring Prescriptions -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-clock text-danger"></i> Expiring Soon</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>#RX-8800 (Michael)</span> <span class="text-danger">In 2 days</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>#RX-8795 (Sophia)</span> <span class="text-danger">In 5 days</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 7. INVENTORY SECTION -->
+<section class="admin-section" id="section-inventory">
+<!-- 1. Full Inventory Tracking Table -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-boxes text-teal"></i> Warehouse &amp; Stock Control</h3>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr><th>SKU</th><th>Product</th><th>Warehouse Area</th><th>Quantity</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr><td>#SKU-1001</td><td>Vitamin C 1000mg</td><td>Zone A</td><td>45 units</td><td><span class="status-badge delivered">In Stock</span></td></tr>
+<tr><td>#SKU-1002</td><td>Pulse Oximeter</td><td>Zone B</td><td>2 units</td><td><span class="status-badge low-stock">Reorder</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Supplier Restock Orders -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-truck text-teal"></i> Incoming Shipments</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Shipment #401</span> <span>Arriving Tomorrow</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Shipment #402</span> <span>Delayed</span></li>
+</ul>
+</div>
+<!-- 3. Expiring Products -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-calendar-times text-danger"></i> Expiring Batches</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Batch #B990</span> <span class="text-danger">Expires next week</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Batch #B880</span> <span class="text-danger">Expires in 14 days</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 8. REVIEWS SECTION -->
+<section class="admin-section" id="section-reviews">
+<!-- 1. Recent Reviews Table -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-star text-teal"></i> Patient Reviews &amp; Moderation</h3>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr><th>Product</th><th>Reviewer</th><th>Rating</th><th>Review Snippet</th><th>Action</th></tr>
+</thead>
+<tbody>
+<tr><td>Vitamin C 1000mg</td><td>Emily D.</td><td><span class="text-warning"><i class="fas fa-star"></i> 5.0</span></td><td>"Great energy booster!"</td><td><button class="btn btn-outline btn-sm">View</button></td></tr>
+<tr><td>Pulse Oximeter</td><td>Michael B.</td><td><span class="text-warning"><i class="fas fa-star"></i> 4.0</span></td><td>"Accurate and fast."</td><td><button class="btn btn-outline btn-sm">View</button></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Pending Moderation Queue -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-shield-alt text-teal"></i> Pending Moderation</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Review by "Anon"</span> <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">Moderate</button></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Review by "User99"</span> <button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">Moderate</button></li>
+</ul>
+</div>
+<!-- 3. Average Rating Statistics -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-chart-bar text-teal"></i> Average Ratings</h3>
+</div>
+<div style="text-align: center; margin-top: 10px;">
+<h1 style="color: var(--primary); font-size: 3rem; margin: 0;">4.8</h1>
+<p class="text-warning mb-0"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></p>
+<p class="text-muted">Based on 1,240 reviews</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. REPORTS SECTION -->
+<section class="admin-section" id="section-reports">
+<!-- 1. Sales & Revenue Overview Table -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-file-invoice-dollar text-teal"></i> Sales &amp; Tax Reports</h3>
+</div>
+<div class="admin-table-wrapper">
+<table class="admin-table">
+<thead>
+<tr><th>Month</th><th>Total Revenue</th><th>Taxes Collected</th><th>Net Profit</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr><td>August 2026</td><td>$14,500.00</td><td>$1,200.00</td><td>$8,400.00</td><td><span class="status-badge pending">Current</span></td></tr>
+<tr><td>July 2026</td><td>$12,400.00</td><td>$950.00</td><td>$7,100.00</td><td><span class="status-badge delivered">Closed</span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="admin-grid-half">
+<!-- 2. User Traffic Analytics -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-chart-line text-teal"></i> Traffic Analytics</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Daily Unique Visitors</span> <span>2,450</span></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Conversion Rate</span> <span>3.2%</span></li>
+</ul>
+</div>
+<!-- 3. Export Options -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-download text-teal"></i> Export Data</h3>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+<button class="btn btn-outline w-100" onclick="window.location.href='404.html'"><i class="fas fa-file-csv"></i> Export Sales CSV</button>
+<button class="btn btn-outline w-100" onclick="window.location.href='404.html'"><i class="fas fa-file-pdf"></i> Export Tax PDF</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. SETTINGS SECTION -->
+<section class="admin-section" id="section-settings">
+<!-- 1. General Profile Form -->
+<div class="admin-card mb-4">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-cog text-teal"></i> Store &amp; Pharmacy Settings</h3>
+</div>
+<form style="max-width: 500px;">
+<div class="form-group">
+<label>Pharmacy License Number</label>
+<input class="form-control" readonly="" type="text" value="NY-98402-PHAR"/>
+</div>
+<div class="form-group">
+<label>Support Phone Line</label>
+<input class="form-control" type="text" value="9999900000"/>
+</div>
+<button class="btn btn-primary" onclick="window.location.href='404.html';" type="button">Save Settings</button>
+</form>
+</div>
+<div class="admin-grid-half">
+<!-- 2. Security Settings -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-lock text-teal"></i> Security Settings</h3>
+</div>
+<form>
+<div class="form-group mb-2"><input class="form-control" placeholder="Current Password" type="password"/></div>
+<div class="form-group mb-2"><input class="form-control" placeholder="New Password" type="password"/></div>
+<button class="btn btn-outline w-100" type="button" onclick="window.location.href='404.html'">Update Password</button>
+</form>
+</div>
+<!-- 3. Notification Preferences -->
+<div class="admin-card">
+<div class="admin-card-header">
+<h3 class="admin-card-title"><i class="fas fa-bell text-teal"></i> Notification Preferences</h3>
+</div>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;"><span>Email Alerts</span> <input checked="" type="checkbox"/></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between; align-items: center;"><span>SMS Alerts</span> <input type="checkbox"/></li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/admin.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const email = localStorage.getItem('loggedInUser');
+            if (email) {
+                let username = email.split('@')[0];
+                username = username.charAt(0).toUpperCase() + username.slice(1);
+                const nameEl = document.querySelector('.admin-profile-name');
+                if (nameEl) nameEl.textContent = username;
+                
+                const greetingEl = document.getElementById('admin-greeting');
+                if (greetingEl) greetingEl.textContent = 'Good Morning, ' + username;
+            }
+        });
+    </script>
+</body>
+</html>

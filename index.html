@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>STACKLY - Trusted Healthcare. Delivered with Care.</title>
+<meta content="Shop authentic medicines, wellness essentials and everyday healthcare products at STACKLY. Fast delivery, 100% genuine products, and 24/7 pharmacist support." name="description"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome 6 Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<!-- COMPACT STICKY HEADER -->
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<nav class="desktop-nav">
+<a class="nav-link active" href="index.html">Home</a>
+<a class="nav-link" href="shop.html">Shop</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="health.html">Health</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" href="login.html" style="padding: 8px 16px; font-weight: 500; font-size: 0.9rem; border-radius: var(--radius-pill); margin-right: 10px;">Login</a>
+<a aria-label="View Cart" class="icon-action-btn" href="cart.html">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-badge js-cart-count">0</span>
+</a>
+<button aria-label="Open Navigation Menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MOBILE NAVIGATION OVERLAY DRAWER -->
+<div class="mobile-nav-overlay">
+<div class="mobile-nav-drawer">
+<div class="mobile-nav-header">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<button aria-label="Close Menu" class="mobile-nav-close">×</button>
+</div>
+<nav class="mobile-nav-links">
+<a class="mobile-nav-link active" href="index.html"><i class="fas fa-home"></i> Home</a>
+<a class="mobile-nav-link" href="shop.html"><i class="fas fa-store"></i> Shop</a>
+<a class="mobile-nav-link" href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a class="mobile-nav-link" href="health.html"><i class="fas fa-heartbeat"></i> Health</a>
+<a class="mobile-nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+<a class="mobile-nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a class="mobile-nav-link" href="cart.html"><i class="fas fa-shopping-bag"></i> Cart (<span class="js-cart-count">0</span>)</a>
+<a class="mobile-nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Account Login</a>
+</nav>
+</div>
+</div>
+<!-- MAIN HOMEPAGE CONTENT -->
+<main>
+<!-- 1. SPLIT-SCREEN HERO SECTION -->
+<section class="hero-section" style="position: relative; overflow: hidden;">
+<!-- Background Video -->
+<video autoplay="" loop="" muted="" playsinline="" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; object-fit: cover;">
+<source src="assets/pharmacy.mp4" type="video/mp4"/>
+</video>
+<!-- Overlay to ensure text readability -->
+<div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(248,252,255,0.6) 0%, rgba(238,247,250,0.4) 100%); z-index: 1;"></div>
+<div class="container" style="position: relative; z-index: 2;">
+<div class="hero-grid" style="grid-template-columns: 1fr;">
+<div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+<div class="hero-badge">
+<span class="badge-tag"><i class="fas fa-shield-alt"></i> Trusted Online Pharmacy</span>
+</div>
+<h1 class="hero-title">Healthcare You Can Trust, <span>Delivered to Your Door</span></h1>
+<p class="hero-desc">Shop authentic medicines, wellness essentials and everyday healthcare products from trusted brands.</p>
+<div class="hero-actions" style="justify-content: center;">
+<a class="btn btn-primary btn-lg" href="404.html"><i class="fas fa-shopping-bag"></i> Shop Medicines</a>
+<a class="btn btn-outline btn-lg" href="404.html"><i class="fas fa-th-large"></i> Explore Categories</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. TRUST SECTION -->
+<section class="trust-strip-section">
+<div class="container">
+<div class="trust-grid">
+<div class="trust-card">
+<div class="trust-icon"><i class="fas fa-certificate"></i></div>
+<div class="trust-text">
+<h4>100% Authentic Products</h4>
+<p>Direct from verified labs &amp; suppliers</p>
+</div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><i class="fas fa-truck"></i></div>
+<div class="trust-text">
+<h4>Fast Delivery</h4>
+<p>Safe express dispatch to your door</p>
+</div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><i class="fas fa-lock"></i></div>
+<div class="trust-text">
+<h4>Secure Payments</h4>
+<p>256-Bit SSL Encrypted checkout</p>
+</div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><i class="fas fa-user-nurse"></i></div>
+<div class="trust-text">
+<h4>Expert Support</h4>
+<p>24/7 Licensed pharmacist advice</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SHOP BY HEALTH NEED (CATEGORIES) -->
+<section class="section-padding">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Shop by Health Need</h2>
+<p class="section-subtitle">Find exact remedies and everyday wellness items curated by health experts.</p>
+</div>
+<div class="categories-grid js-animate-grid">
+<a class="category-card" href="404.html">
+<div class="category-icon-box"><i class="fas fa-pills"></i></div>
+<h3 class="category-card-title">Medicines</h3>
+<p class="category-card-desc">Prescription &amp; OTC pain relievers, cold relief, and chronic health care.</p>
+<span class="category-card-arrow">Browse Category <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="category-card" href="404.html">
+<div class="category-icon-box"><i class="fas fa-capsules"></i></div>
+<h3 class="category-card-title">Vitamins</h3>
+<p class="category-card-desc">Liposomal Vitamin C, Multivitamins, Mineral Complexes, and Immunity supplements.</p>
+<span class="category-card-arrow">Browse Category <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="category-card" href="404.html">
+<div class="category-icon-box"><i class="fas fa-pump-soap"></i></div>
+<h3 class="category-card-title">Personal Care</h3>
+<p class="category-card-desc">Daily hygiene items, oral care, body washes, and antimicrobial essentials.</p>
+<span class="category-card-arrow">Browse Category <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="category-card" href="404.html">
+<div class="category-icon-box"><i class="fas fa-air-freshener"></i></div>
+<h3 class="category-card-title">Skin Care</h3>
+<p class="category-card-desc">Dermatologist-approved serums, barrier hydration creams, and SPF 50+ mineral sunscreens.</p>
+<span class="category-card-arrow">Browse Category <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="category-card" href="404.html">
+<div class="category-icon-box"><i class="fas fa-baby"></i></div>
+<h3 class="category-card-title">Baby Care</h3>
+<p class="category-card-desc">Gentle tear-free shampoos, hypoallergenic washes, and newborn care supplies.</p>
+<span class="category-card-arrow">Browse Category <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="category-card" href="404.html">
+<div class="category-icon-box"><i class="fas fa-heartbeat"></i></div>
+<h3 class="category-card-title">Medical Devices</h3>
+<p class="category-card-desc">Digital oximeters, blood pressure gauges, and clinical home health monitors.</p>
+<span class="category-card-arrow">Browse Category <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="category-card" href="404.html">
+<div class="category-icon-box"><i class="fas fa-first-aid"></i></div>
+<h3 class="category-card-title">First Aid</h3>
+<p class="category-card-desc">Sterile trauma kits, antiseptics, bandages, shears, and emergency dressing.</p>
+<span class="category-card-arrow">Browse Category <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="category-card" href="404.html">
+<div class="category-icon-box"><i class="fas fa-spa"></i></div>
+<h3 class="category-card-title">Wellness</h3>
+<p class="category-card-desc">Restorative Magnesium night complexes, sleep aids, and natural stress botanicals.</p>
+<span class="category-card-arrow">Browse Category <i class="fas fa-arrow-right"></i></span>
+</a>
+</div>
+</div>
+</section>
+<!-- 4. POPULAR HEALTHCARE ESSENTIALS (FEATURED PRODUCTS) -->
+<section class="section-padding" style="background-color: #FFFFFF;">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Popular Healthcare Essentials</h2>
+<p class="section-subtitle">Top-rated authentic medicines, supplements, and clinical equipment loved by our customers.</p>
+</div>
+<div class="products-grid js-animate-grid" id="featured-products-grid">
+<!-- Populated dynamically by js/main.js with full functionality -->
+</div>
+<div class="text-center mt-6" style="text-align: center; margin-top: 40px;">
+<a class="btn btn-outline btn-lg" href="404.html"><i class="fas fa-store"></i> View All Products</a>
+</div>
+</div>
+</section>
+<!-- 5. WHY CHOOSE US -->
+<section class="split-section">
+<div class="container">
+<div class="split-grid">
+<img alt="Licensed STACKLY Quality Assurance" class="split-image" src="assets/images/14_licensed_pharmacist_consultation.webp"/ loading="lazy">
+<div class="split-content">
+<span class="badge-tag mb-3"><i class="fas fa-award"></i> Why Choose STACKLY</span>
+<h2>Licensed Healthcare Built Around Uncompromised Quality</h2>
+<p>We combine digital convenience with strict pharmaceutical compliance. Every product in our inventory undergoes rigorous quality verification before reaching your hands.</p>
+<div class="features-list-grid">
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-box-check"></i></div>
+<div class="feature-info">
+<h4>Certified Products</h4>
+<p>100% genuine medical supplies sourced directly from licensed labs.</p>
+</div>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-store-alt"></i></div>
+<div class="feature-info">
+<h4>Licensed Pharmacy</h4>
+<p>Full regulatory compliance and registered pharmacy credentials.</p>
+</div>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+<div class="feature-info">
+<h4>Fast Delivery</h4>
+<p>Temperature-controlled express dispatch to your doorstep.</p>
+</div>
+</div>
+<div class="feature-card">
+<div class="feature-icon"><i class="fas fa-user-md"></i></div>
+<div class="feature-info">
+<h4>Pharmacist Support</h4>
+<p>Dedicated clinical advice for dosage and drug interaction queries.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. HEALTH & WELLNESS TIPS -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="split-grid">
+<div class="split-content">
+<span class="badge-tag mb-3"><i class="fas fa-heartbeat"></i> Health Guidance</span>
+<h2>Better Health Starts With Better Choices</h2>
+<p>Our team of clinical specialists regularly publishes evidence-based health guides to help you manage your daily wellness with confidence.</p>
+<div class="health-tips-list">
+<div class="health-tip-item">
+<i class="fas fa-check-circle"></i>
+<div>
+<strong>Proper Medication Storage:</strong> Store medicines below 25°C away from bathroom moisture to preserve potency.
+                                </div>
+</div>
+<div class="health-tip-item">
+<i class="fas fa-check-circle"></i>
+<div>
+<strong>Immune Defense Timing:</strong> Take Liposomal Vitamin C consistently with meals for maximum absorption.
+                                </div>
+</div>
+<div class="health-tip-item">
+<i class="fas fa-check-circle"></i>
+<div>
+<strong>Blood Pressure Tracking:</strong> Measure BP at the same time daily while resting for 5 quiet minutes beforehand.
+                                </div>
+</div>
+</div>
+<a class="btn btn-primary btn-lg" href="404.html"><i class="fas fa-book-medical"></i> Explore Health Guides</a>
+</div>
+<img alt="Health and Wellness Guidance" class="split-image" src="assets/images/09_health_wellness.webp"/ loading="lazy">
+</div>
+</div>
+</section>
+<!-- NEW SECTION 1: PHARMACIST CONSULTATION SPOTLIGHT -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="split-grid" style="align-items: center;">
+<img alt="Licensed Clinical Pharmacist Consultation" class="split-image" src="assets/images/14_licensed_pharmacist_consultation.webp"/ loading="lazy">
+<div class="split-content">
+<span class="badge-tag mb-3"><i class="fas fa-user-md"></i> 24/7 Clinical Care</span>
+<h2>Speak With a Licensed Pharmacist Online</h2>
+<p>Have questions about drug interactions, dosage guidelines, or choosing the right supplement? Our registered clinical team is ready to assist you 24 hours a day.</p>
+<ul class="benefits-list mb-4" style="list-style: none; padding: 0;">
+<li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600;">
+<i class="fas fa-check-circle text-teal" style="color: var(--primary);"></i> Free 1-on-1 Confidential Consultations
+                            </li>
+<li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600;">
+<i class="fas fa-check-circle text-teal" style="color: var(--primary);"></i> Prescription Verification &amp; Review
+                            </li>
+<li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600;">
+<i class="fas fa-check-circle text-teal" style="color: var(--primary);"></i> Personalized Supplement Recommendations
+                            </li>
+</ul>
+<a class="btn btn-primary btn-lg" href="404.html"><i class="fas fa-comments"></i> Start Free Consultation</a>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW SECTION 2: COLD-CHAIN GUARANTEE -->
+<section class="section-padding">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Cold-Chain Storage &amp; Quality Guarantee</h2>
+<p class="section-subtitle">How STACKLY safeguards pharmaceutical potency from lab to your door.</p>
+</div>
+<div class="trust-grid js-animate-grid" style="grid-template-columns: repeat(4, 1fr);">
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color);">
+<div class="trust-icon"><i class="fas fa-snowflake"></i></div>
+<div class="trust-text">
+<h4>Climate Controlled</h4>
+<p>Stored below 25°C in climate-monitored facilities.</p>
+</div>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color);">
+<div class="trust-icon"><i class="fas fa-box-open"></i></div>
+<div class="trust-text">
+<h4>Insulated Packaging</h4>
+<p>Thermal protective barrier wrap for all express shipments.</p>
+</div>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color);">
+<div class="trust-icon"><i class="fas fa-certificate"></i></div>
+<div class="trust-text">
+<h4>100% Authentic</h4>
+<p>Direct manufacturer batch tracking &amp; verification seals.</p>
+</div>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color);">
+<div class="trust-icon"><i class="fas fa-shipping-fast"></i></div>
+<div class="trust-text">
+<h4>Express Dispatch</h4>
+<p>Orders packed &amp; shipped within 24 hours of approval.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. TESTIMONIALS -->
+<section class="testimonials-section">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">What Our Customers Say</h2>
+<p class="section-subtitle">Real experiences from patients and families who trust STACKLY for their everyday healthcare needs.</p>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+</div>
+<p class="testimonial-quote">"STACKLY has been a lifesaver for my elderly parents. Ordering prescription vitamins and BP equipment is seamless, and delivery is always next-day."</p>
+<div class="testimonial-author">
+<div class="author-avatar">EM</div>
+<div class="author-info">
+<h4>Elena Martinez</h4>
+<span><i class="fas fa-check-circle"></i> Verified Customer</span>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+</div>
+<p class="testimonial-quote">"I was skeptical about ordering sensitive skin serums online, but STACKLY products are 100% authentic and packaged with immense care. Highly recommended!"</p>
+<div class="testimonial-author">
+<div class="author-avatar">DR</div>
+<div class="author-info">
+<h4>David Reynolds</h4>
+<span><i class="fas fa-check-circle"></i> Verified Customer</span>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-stars">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+</div>
+<p class="testimonial-quote">"The pharmacist live chat answered all my questions regarding vitamin interactions. Fantastic contact us and very reasonable prices."</p>
+<div class="testimonial-author">
+<div class="author-avatar">SK</div>
+<div class="author-info">
+<h4>Sophia Kapoor</h4>
+<span><i class="fas fa-check-circle"></i> Verified Customer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. NEWSLETTER -->
+<section class="newsletter-section">
+<div class="container">
+<div class="newsletter-card">
+<div class="newsletter-content">
+<h2>Stay Updated on Better Health</h2>
+<p>Subscribe to receive health advice from licensed pharmacists, exclusive discounts, and product restock alerts directly to your inbox.</p>
+</div>
+<form class="newsletter-form" action="404.html">
+<input aria-label="Email for Newsletter" placeholder="Enter your email address" required="" type="email" oninvalid="this.setCustomValidity('Please fill the details')" oninput="this.setCustomValidity('')"/>
+<button class="btn" type="submit">Subscribe Now</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- COMPREHENSIVE FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+</a>
+<p>Trusted Healthcare. Delivered with Care. Sourcing certified pharmaceuticals and wellness essentials to safeguard family health nationwide.</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-btn" href="404.html"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Twitter" class="social-btn" href="404.html"><i class="fab fa-twitter"></i></a>
+<a aria-label="Instagram" class="social-btn" href="404.html"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-btn" href="404.html"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="404.html">Shop Medicines</a>
+<a href="categories.html">Health Categories</a>
+<a href="health.html">Health Guides</a>
+<a href="about.html">About STACKLY</a>
+<a href="contact.html">Contact Support</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Popular Categories</h4>
+<div class="footer-links">
+<a href="404.html">OTC Medicines</a>
+<a href="404.html">Vitamins &amp; Supplements</a>
+<a href="404.html">Dermatology &amp; Skin</a>
+<a href="404.html">Baby Care &amp; Formulas</a>
+<a href="404.html">Medical Equipment</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<div class="footer-contact-info" style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-envelope" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> info@stackly.com</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> 9999900000</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> MMR Complex, Chinna Tirupathi, near by Chinna Muniyappan Kovil, Salem 636008</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 STACKLY Pharmacy Store. All rights reserved.</p>
+<p>Designed with care for superior healthcare access.</p>
+</div>
+</div>
+</footer>
+<!-- GLOBAL SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+<div class="modal-card search-modal-card">
+<button aria-label="Close Search" class="modal-close-btn search-modal-close">×</button>
+<div class="search-input-header">
+<i class="fas fa-search text-teal"></i>
+<input autocomplete="off" id="global-search-input" placeholder="Search medicines, vitamins, skincare..." type="text"/>
+</div>
+<div class="search-results-list" id="global-search-results">
+<div class="search-placeholder">
+<i class="fas fa-search"></i>
+<p>Type at least 2 characters to search products...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

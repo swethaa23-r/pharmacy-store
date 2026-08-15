@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Find What You Need - STACKLY Health Categories</title>
+<meta content="Explore STACKLY healthcare products organized around your everyday needs: OTC Medicines, Vitamins, Personal Care, Skin Care, Baby Care, Medical Devices, First Aid, and Wellness." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- CSS Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<!-- SITE HEADER -->
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<nav class="desktop-nav">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="shop.html">Shop</a>
+<a class="nav-link active" href="categories.html">Categories</a>
+<a class="nav-link" href="health.html">Health</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" href="login.html" style="padding: 8px 16px; font-weight: 500; font-size: 0.9rem; border-radius: var(--radius-pill); margin-right: 10px;">Login</a>
+<a aria-label="View Cart" class="icon-action-btn" href="cart.html">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-badge js-cart-count">0</span>
+</a>
+<button aria-label="Open Navigation Menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MOBILE NAVIGATION OVERLAY -->
+<div class="mobile-nav-overlay">
+<div class="mobile-nav-drawer">
+<div class="mobile-nav-header">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<button aria-label="Close Menu" class="mobile-nav-close">×</button>
+</div>
+<nav class="mobile-nav-links">
+<a class="mobile-nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+<a class="mobile-nav-link" href="shop.html"><i class="fas fa-store"></i> Shop</a>
+<a class="mobile-nav-link active" href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a class="mobile-nav-link" href="health.html"><i class="fas fa-heartbeat"></i> Health</a>
+<a class="mobile-nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+<a class="mobile-nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a class="mobile-nav-link" href="cart.html"><i class="fas fa-shopping-bag"></i> Cart (<span class="js-cart-count">0</span>)</a>
+<a class="mobile-nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Account Login</a>
+</nav>
+</div>
+</div>
+<!-- MAIN CONTENT -->
+<main>
+<!-- HERO SECTION -->
+<section class="page-hero">
+<div class="container">
+<h1>Find What You Need</h1>
+<p>Explore healthcare products organized around your everyday needs.</p>
+</div>
+<div class="hero-wave-divider">
+<svg data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path class="shape-fill" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.69,38,154.51,75,233.15,80.12,263.26,82.08,293.18,73.1,321.39,56.44Z"></path>
+</svg>
+</div>
+</section>
+<!-- ASYMMETRIC CATEGORIES GRID SECTION -->
+<section class="section-padding">
+<div class="container">
+<div class="asymmetric-categories-grid js-animate-grid">
+<!-- 1. MEDICINES (FEATURED WIDE CARD) -->
+<div class="category-card-large featured-wide js-animate-card">
+<div class="cat-card-img-box">
+<img alt="OTC &amp; Prescription Medicines" src="assets/images/02_otc_prescription_medicines.webp"/ loading="lazy">
+<div class="cat-overlay"></div>
+</div>
+<div class="cat-card-body">
+<div class="cat-card-icon"><i class="fas fa-pills"></i></div>
+<h3 class="cat-card-title">Medicines</h3>
+<p class="cat-card-desc">Authentic analgesics, fever reducers, antihistamines, and prescription management supplies for acute and chronic care.</p>
+<a class="cat-explore-btn" href="404.html">
+                                Explore Category <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- 2. VITAMINS -->
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Vitamins &amp; Supplements" src="assets/images/03_vitamins_supplements.webp"/ loading="lazy">
+<div class="cat-overlay"></div>
+</div>
+<div class="cat-card-body">
+<div class="cat-card-icon"><i class="fas fa-capsules"></i></div>
+<h3 class="cat-card-title">Vitamins</h3>
+<p class="cat-card-desc">Liposomal Vitamin C, Vitamin D3 softgels, Zinc immunity complexes, and joint collagen.</p>
+<a class="cat-explore-btn" href="404.html">
+                                Explore Category <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- 3. PERSONAL CARE -->
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Personal Care &amp; Hygiene" src="assets/images/05_personal_care_hygiene.webp"/ loading="lazy">
+<div class="cat-overlay"></div>
+</div>
+<div class="cat-card-body">
+<div class="cat-card-icon"><i class="fas fa-pump-soap"></i></div>
+<h3 class="cat-card-title">Personal Care</h3>
+<p class="cat-card-desc">Everyday body washes, oral hygiene systems, antibacterial solutions, and hand remedies.</p>
+<a class="cat-explore-btn" href="404.html">
+                                Explore Category <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- 4. SKIN CARE (FEATURED WIDE CARD) -->
+<div class="category-card-large featured-wide js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Dermatology &amp; Skin Care" src="assets/images/04_dermatology_skin_care.webp"/ loading="lazy">
+<div class="cat-overlay"></div>
+</div>
+<div class="cat-card-body">
+<div class="cat-card-icon"><i class="fas fa-air-freshener"></i></div>
+<h3 class="cat-card-title">Skin Care</h3>
+<p class="cat-card-desc">Dermatologist-recommended hyaluronic acid serums, SPF 50+ mineral sunscreens, and skin barrier repair creams.</p>
+<a class="cat-explore-btn" href="404.html">
+                                Explore Category <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- 5. BABY CARE -->
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Baby &amp; Infant Care" src="assets/images/06_baby_infant_care.webp"/ loading="lazy">
+<div class="cat-overlay"></div>
+</div>
+<div class="cat-card-body">
+<div class="cat-card-icon"><i class="fas fa-baby"></i></div>
+<h3 class="cat-card-title">Baby Care</h3>
+<p class="cat-card-desc">Tear-free organic cleansers, sensitive baby wipes, barrier rash ointments, and newborn care.</p>
+<a class="cat-explore-btn" href="404.html">
+                                Explore Category <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- 6. MEDICAL DEVICES -->
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Clinical Medical Devices" src="assets/images/07_clinical_medical_devices.webp"/ loading="lazy">
+<div class="cat-overlay"></div>
+</div>
+<div class="cat-card-body">
+<div class="cat-card-icon"><i class="fas fa-heartbeat"></i></div>
+<h3 class="cat-card-title">Medical Devices</h3>
+<p class="cat-card-desc">Accurate digital oximeters, blood pressure monitors, infrared thermometers, and clinical tools.</p>
+<a class="cat-explore-btn" href="404.html">
+                                Explore Category <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- 7. FIRST AID -->
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="First Aid &amp; Emergency" src="assets/images/08_first_aid_emergency.webp"/ loading="lazy">
+<div class="cat-overlay"></div>
+</div>
+<div class="cat-card-body">
+<div class="cat-card-icon"><i class="fas fa-first-aid"></i></div>
+<h3 class="cat-card-title">First Aid</h3>
+<p class="cat-card-desc">Emergency trauma kits, hydrocolloid plasters, antiseptic wound sprays, and aloe burn relief gel.</p>
+<a class="cat-explore-btn" href="404.html">
+                                Explore Category <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- 8. WELLNESS -->
+<div class="category-card-large js-animate-card">
+<div class="cat-card-img-box">
+<img alt="Health &amp; Wellness" src="assets/images/09_health_wellness.webp"/ loading="lazy">
+<div class="cat-overlay"></div>
+</div>
+<div class="cat-card-body">
+<div class="cat-card-icon"><i class="fas fa-spa"></i></div>
+<h3 class="cat-card-title">Wellness</h3>
+<p class="cat-card-desc">Organic Ashwagandha, Melatonin sleep support gummies, hydration powders, and probiotics.</p>
+<a class="cat-explore-btn" href="404.html">
+                                Explore Category <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- NEW SECTION 1: BROWSE BY HEALTH SPECIALTY -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Browse by Health Specialty</h2>
+<p class="section-subtitle">Quickly locate targeted care for specific medical conditions.</p>
+</div>
+<div class="categories-grid js-animate-grid" style="grid-template-columns: repeat(3, 1fr);">
+<a class="health-guide-card js-animate-card" href="404.html" style="text-decoration: none;">
+<div class="health-card-icon"><i class="fas fa-heartbeat"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Cardiac &amp; BP Care</h3>
+<p style="font-size: 0.88rem; color: var(--text-muted);">Digital blood pressure monitors, omega-3 fish oils, and CoQ10 supplements.</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">28 Products <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="health-guide-card js-animate-card" href="404.html" style="text-decoration: none;">
+<div class="health-card-icon"><i class="fas fa-microscope"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Diabetes Management</h3>
+<p style="font-size: 0.88rem; color: var(--text-muted);">Glucose monitors, test strips, lancets, and sugar-free daily vitamins.</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">19 Products <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="health-guide-card js-animate-card" href="404.html" style="text-decoration: none;">
+<div class="health-card-icon"><i class="fas fa-lungs"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Respiratory &amp; Allergy</h3>
+<p style="font-size: 0.88rem; color: var(--text-muted);">Digital oximeters, saline nasal sprays, and non-drowsy antihistamines.</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">34 Products <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="health-guide-card js-animate-card" href="404.html" style="text-decoration: none;">
+<div class="health-card-icon"><i class="fas fa-bone"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Joint &amp; Bone Health</h3>
+<p style="font-size: 0.88rem; color: var(--text-muted);">Calcium D3 softgels, Glucosamine Chondroitin, and collagen peptides.</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">22 Products <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="health-guide-card js-animate-card" href="404.html" style="text-decoration: none;">
+<div class="health-card-icon"><i class="fas fa-allergies"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Digestive Wellness</h3>
+<p style="font-size: 0.88rem; color: var(--text-muted);">Probiotic gut flora cultures, digestive enzymes, and antacid tablets.</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">16 Products <i class="fas fa-arrow-right"></i></span>
+</a>
+<a class="health-guide-card js-animate-card" href="404.html" style="text-decoration: none;">
+<div class="health-card-icon"><i class="fas fa-spa"></i></div>
+<h3 style="font-size: 1.2rem; color: var(--secondary);">Dermatology &amp; Skin Barrier</h3>
+<p style="font-size: 0.88rem; color: var(--text-muted);">Ceramide barrier creams, mineral sunscreens, and hyaluronic serums.</p>
+<span style="font-size: 0.82rem; font-weight: 700; color: var(--primary);">31 Products <i class="fas fa-arrow-right"></i></span>
+</a>
+</div>
+</div>
+</section>
+<!-- NEW SECTION 2: SEASONAL ESSENTIALS SPOTLIGHT -->
+<section class="section-padding">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Seasonal Healthcare Essentials</h2>
+<p class="section-subtitle">Stay protected throughout seasonal environmental changes.</p>
+</div>
+<div class="split-grid" style="align-items: center;">
+<div class="split-content">
+<span class="badge-tag mb-3"><i class="fas fa-umbrella-beach"></i> Seasonal Care</span>
+<h2>Summer Sun Protection &amp; Hydration</h2>
+<p>Protect your skin and stay energized during warm months. Sourced with Broad-Spectrum SPF 50+ mineral filters and electrolyte hydration powders.</p>
+<a class="btn btn-primary btn-lg" href="404.html"><i class="fas fa-sun"></i> Explore Summer Range</a>
+</div>
+<img alt="Seasonal Sun Protection Care" class="split-image" src="assets/images/10_sun_protection.webp"/ loading="lazy">
+</div>
+</div>
+</section>
+<!-- POPULAR HEALTHCARE CATEGORIES SECTION -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Popular Healthcare Categories</h2>
+<p class="section-subtitle">Our most frequently requested clinical departments loved by families.</p>
+</div>
+<div class="popular-cat-grid js-animate-grid">
+<a class="popular-cat-card js-animate-card" href="404.html">
+<div class="popular-cat-icon"><i class="fas fa-pills"></i></div>
+<h4 style="font-size: 1.1rem; color: var(--secondary);">OTC Medicines</h4>
+<span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Analgesics &amp; Fever</span>
+</a>
+<a class="popular-cat-card js-animate-card" href="404.html">
+<div class="popular-cat-icon"><i class="fas fa-capsules"></i></div>
+<h4 style="font-size: 1.1rem; color: var(--secondary);">Vitamins</h4>
+<span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Liposomal C &amp; D3</span>
+</a>
+<a class="popular-cat-card js-animate-card" href="404.html">
+<div class="popular-cat-icon"><i class="fas fa-air-freshener"></i></div>
+<h4 style="font-size: 1.1rem; color: var(--secondary);">Skin Care</h4>
+<span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Serums &amp; SPF 50+</span>
+</a>
+<a class="popular-cat-card js-animate-card" href="404.html">
+<div class="popular-cat-icon"><i class="fas fa-heartbeat"></i></div>
+<h4 style="font-size: 1.1rem; color: var(--secondary);">Medical Devices</h4>
+<span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Oximeters &amp; BP Monitors</span>
+</a>
+</div>
+</div>
+</section>
+<!-- HEALTHCARE CTA BANNER -->
+<section class="cta-banner-section">
+<div class="container">
+<div class="cta-banner-content">
+<h2>Your Health, Our Priority</h2>
+<p>Experience fast, authentic healthcare delivery backed by 24/7 licensed pharmacist support.</p>
+<a class="btn btn-primary btn-lg" href="404.html" style="background-color: var(--white); color: var(--secondary); font-weight: 700;">
+<i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+</a>
+<p>Trusted Healthcare. Delivered with Care. Sourcing certified pharmaceuticals and wellness essentials to safeguard family health nationwide.</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-btn" href="404.html"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Twitter" class="social-btn" href="404.html"><i class="fab fa-twitter"></i></a>
+<a aria-label="Instagram" class="social-btn" href="404.html"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-btn" href="404.html"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="404.html">Shop Medicines</a>
+<a href="categories.html">Health Categories</a>
+<a href="health.html">Health Guides</a>
+<a href="about.html">About STACKLY</a>
+<a href="contact.html">Contact Support</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Popular Categories</h4>
+<div class="footer-links">
+<a href="404.html">OTC Medicines</a>
+<a href="404.html">Vitamins &amp; Supplements</a>
+<a href="404.html">Dermatology &amp; Skin</a>
+<a href="404.html">Baby Care &amp; Formulas</a>
+<a href="404.html">Medical Equipment</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<div class="footer-contact-info" style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-envelope" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> info@stackly.com</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> 9999900000</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> MMR Complex, Chinna Tirupathi, near by Chinna Muniyappan Kovil, Salem 636008</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 STACKLY Pharmacy Store. All rights reserved.</p>
+<p>Designed with care for superior healthcare access.</p>
+</div>
+</div>
+</footer>
+<!-- GLOBAL SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+<div class="modal-card search-modal-card">
+<button aria-label="Close Search" class="modal-close-btn search-modal-close">×</button>
+<div class="search-input-header">
+<i class="fas fa-search text-teal"></i>
+<input autocomplete="off" id="global-search-input" placeholder="Search medicines, vitamins, skincare..." type="text"/>
+</div>
+<div class="search-results-list" id="global-search-results">
+<div class="search-placeholder">
+<i class="fas fa-search"></i>
+<p>Type at least 2 characters to search products...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

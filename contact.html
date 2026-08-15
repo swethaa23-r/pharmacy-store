@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact &amp; Help Center - STACKLY</title>
+<meta content="Get in touch with STACKLY healthcare support team. Contact us by phone, email, or send a direct message for prescription advice and order support." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- CSS Stylesheets -->
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+<style>
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .faq-item.active {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-question i {
+            transition: transform var(--transition-fast);
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .map-section-box {
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--bg-main) 100%);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-badge-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--white);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body>
+<!-- GSAP PRELOADER -->
+<div class="gsap-preloader" id="gsap-preloader">
+<div class="gsap-curtain"></div>
+<div class="gsap-preloader-content">
+<div class="gsap-pill">
+<div class="gsap-pill-left"></div>
+<div class="gsap-pill-right"></div>
+</div>
+<div class="gsap-brand">STACKLY</div>
+</div>
+</div>
+<!-- SITE HEADER -->
+<header class="site-header">
+<div class="container">
+<div class="header-inner">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<nav class="desktop-nav">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="shop.html">Shop</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="health.html">Health</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link active" href="contact.html">Contact</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" href="login.html" style="padding: 8px 16px; font-weight: 500; font-size: 0.9rem; border-radius: var(--radius-pill); margin-right: 10px;">Login</a>
+<a aria-label="View Cart" class="icon-action-btn" href="cart.html">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-badge js-cart-count">0</span>
+</a>
+<button aria-label="Open Navigation Menu" class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MOBILE NAVIGATION OVERLAY -->
+<div class="mobile-nav-overlay">
+<div class="mobile-nav-drawer">
+<div class="mobile-nav-header">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
+</a>
+<button aria-label="Close Menu" class="mobile-nav-close">×</button>
+</div>
+<nav class="mobile-nav-links">
+<a class="mobile-nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+<a class="mobile-nav-link" href="shop.html"><i class="fas fa-store"></i> Shop</a>
+<a class="mobile-nav-link" href="categories.html"><i class="fas fa-th-large"></i> Categories</a>
+<a class="mobile-nav-link" href="health.html"><i class="fas fa-heartbeat"></i> Health</a>
+<a class="mobile-nav-link" href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+<a class="mobile-nav-link active" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+<a class="mobile-nav-link" href="cart.html"><i class="fas fa-shopping-bag"></i> Cart (<span class="js-cart-count">0</span>)</a>
+<a class="mobile-nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Account Login</a>
+</nav>
+</div>
+</div>
+<!-- MAIN CONTENT -->
+<main>
+<!-- HERO SECTION -->
+<section class="page-hero">
+<div class="container">
+<h1>How Can We Help?</h1>
+<p>Our healthcare support team is here to help.</p>
+</div>
+<div class="hero-wave-divider">
+<svg data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path class="shape-fill" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.69,38,154.51,75,233.15,80.12,263.26,82.08,293.18,73.1,321.39,56.44Z"></path>
+</svg>
+</div>
+</section>
+<!-- CONTACT CARDS GRID -->
+<section class="section-padding">
+<div class="container">
+<div class="trust-grid js-animate-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 60px;">
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color);">
+<div class="trust-icon"><i class="fas fa-phone-alt"></i></div>
+<div class="trust-text">
+<h4>Phone</h4>
+<p>9999900000</p>
+</div>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color);">
+<div class="trust-icon"><i class="fas fa-envelope"></i></div>
+<div class="trust-text">
+<h4>Email</h4>
+<p>info@stackly.com</p>
+</div>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color);">
+<div class="trust-icon"><i class="fas fa-clock"></i></div>
+<div class="trust-text">
+<h4>Support Hours</h4>
+<p>Mon-Sun: 24/7 Available</p>
+</div>
+</div>
+<div class="trust-card js-animate-card" style="background-color: var(--white); border: 1px solid var(--border-color);">
+<div class="trust-icon"><i class="fas fa-map-marker-alt"></i></div>
+<div class="trust-text">
+<h4>Location</h4>
+<p>MMR Complex, Chinna Tirupathi, near by Chinna Muniyappan Kovil, Salem 636008</p>
+</div>
+</div>
+</div>
+<!-- CONTACT FORM & MAP GRID -->
+<div class="split-grid" style="align-items: start;">
+<!-- CONTACT FORM CARD -->
+<div class="auth-card" style="max-width: 100%;">
+<h2 class="mb-2" style="color: var(--secondary); font-size: 1.6rem; margin-bottom: 8px;">Send Us a Message</h2>
+<p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Fill out the form below and our clinical team will get back to you shortly.</p>
+<form id="contact-form">
+<div class="form-group">
+<label for="contact-name">Full Name *</label>
+<input class="form-control" id="contact-name" name="name" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="contact-email">Email Address *</label>
+<input class="form-control" id="contact-email" name="email" placeholder="john@example.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="contact-phone">Phone Number *</label>
+<input class="form-control" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000" required="" type="tel"/>
+</div>
+<div class="form-group">
+<label for="contact-subject">Subject</label>
+<input class="form-control" id="contact-subject" name="subject" placeholder="Prescription query, Product question, or Order #" type="text"/>
+</div>
+<div class="form-group">
+<label for="contact-msg">Message *</label>
+<textarea class="form-control" id="contact-msg" name="message" placeholder="How can our clinical team assist you today?" required="" rows="5"></textarea>
+</div>
+<button class="btn btn-primary btn-lg" style="width: 100%;" type="submit">
+<i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+</form>
+</div>
+<!-- MAP / LOCATION SECTION -->
+<div style="display: flex; flex-direction: column; gap: 24px;">
+<div class="map-section-box">
+<span class="map-badge-tag"><i class="fas fa-check-circle text-teal"></i> Open 24/7</span>
+<i class="fas fa-map-marked-alt" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 16px;"></i>
+<h3 style="color: var(--secondary); font-size: 1.4rem; margin-bottom: 8px;">STACKLY Central Fulfillment Center</h3>
+<p style="color: var(--text-muted); font-size: 0.95rem; max-width: 380px; margin: 0 auto 12px;">750 Medical Plaza, Suite 400 ”¢ Licensed Pharmacy #NY-98402</p>
+<span class="badge-tag" style="background-color: var(--accent); color: var(--primary); font-weight: 700;">
+<i class="fas fa-shield-alt"></i> Certified Temperature-Controlled Distribution
+                            </span>
+</div>
+<div style="background-color: var(--white); padding: 28px; border-radius: 20px; border: 1px solid var(--border-color);">
+<h4 style="color: var(--secondary); margin-bottom: 12px; font-size: 1.1rem;">
+<i class="fas fa-user-md text-teal"></i> Direct Pharmacist Helpline
+                            </h4>
+<p style="color: var(--text-muted); font-size: 0.95rem;">Need immediate advice on medication dosages or prescription refills? Call our registered pharmacist hotline anytime at <strong>+1 (800) 555-7427</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ SECTION -->
+<section class="section-padding" style="background-color: var(--white);">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<p class="section-subtitle">Quick answers to common questions regarding ordering, express shipping, and product authenticity.</p>
+</div>
+<div class="faq-accordion">
+<div class="faq-item active">
+<div class="faq-question">
+<span>How do I know my medicines are 100% authentic?</span>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="faq-answer">
+                            STACKLY sources products directly from FDA-approved manufacturers and certified state distributors. Every batch is cataloged with batch numbers and expiry dates verified by licensed pharmacists.
+                        </div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>What are your shipping times and delivery costs?</span>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="faq-answer">
+                            We offer FREE Express Shipping on all orders over $50. Orders placed before 2:00 PM EST are dispatched the same day. Standard delivery takes 1-3 business days.
+                        </div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>Can I speak directly to a pharmacist about my order?</span>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="faq-answer">
+                            Yes! Our licensed clinical pharmacists are available 24/7 via phone or our live chat widget to answer any dosage or drug interaction questions.
+                        </div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>What is your return policy for healthcare items?</span>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="faq-answer">
+                            For health and safety compliance, unopened wellness items and medical devices can be returned within 30 days. Contact support to initiate a return shipping label.
+                        </div>
+</div>
+<div class="faq-item">
+<div class="faq-question">
+<span>How do I upload or verify a prescription?</span>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="faq-answer">
+                            You can upload a clear photo or PDF of your valid prescription during checkout or email it directly to <strong>rx@stackly.com</strong> with your order number.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA SECTION -->
+<section class="cta-banner-section">
+<div class="container">
+<div class="cta-banner-content">
+<h2>Need Help Choosing a Product?</h2>
+<p>Our licensed clinical pharmacists are ready to guide you to the exact medicine or supplement you need.</p>
+<a class="btn btn-primary btn-lg" href="#contact-form" style="background-color: var(--white); color: var(--secondary); font-weight: 700;">
+<i class="fas fa-headset"></i> Contact Our Support Team
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="brand-logo" href="index.html">
+<img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+</a>
+<p>Trusted Healthcare. Delivered with Care. Sourcing certified pharmaceuticals and wellness essentials to safeguard family health nationwide.</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-btn" href="404.html"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Twitter" class="social-btn" href="404.html"><i class="fab fa-twitter"></i></a>
+<a aria-label="Instagram" class="social-btn" href="404.html"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-btn" href="404.html"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="404.html">Shop Medicines</a>
+<a href="categories.html">Health Categories</a>
+<a href="health.html">Health Guides</a>
+<a href="about.html">About STACKLY</a>
+<a href="contact.html">Contact Support</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Popular Categories</h4>
+<div class="footer-links">
+<a href="404.html">OTC Medicines</a>
+<a href="404.html">Vitamins &amp; Supplements</a>
+<a href="404.html">Dermatology &amp; Skin</a>
+<a href="404.html">Baby Care &amp; Formulas</a>
+<a href="404.html">Medical Equipment</a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<div class="footer-contact-info" style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6; margin-top: 15px;">
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-envelope" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> info@stackly.com</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-phone-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> 9999900000</p>
+<p style="margin-bottom: 10px; display: flex; align-items: flex-start;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 4px; color: rgba(255, 255, 255, 0.8);"></i> MMR Complex, Chinna Tirupathi, near by Chinna Muniyappan Kovil, Salem 636008</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 STACKLY Pharmacy Store. All rights reserved.</p>
+<p>Designed with care for superior healthcare access.</p>
+</div>
+</div>
+</footer>
+<!-- GLOBAL SEARCH MODAL -->
+<div class="modal-overlay" id="search-modal">
+<div class="modal-card search-modal-card">
+<button aria-label="Close Search" class="modal-close-btn search-modal-close">×</button>
+<div class="search-input-header">
+<i class="fas fa-search text-teal"></i>
+<input autocomplete="off" id="global-search-input" placeholder="Search medicines, vitamins, skincare..." type="text"/>
+</div>
+<div class="search-results-list" id="global-search-results">
+<div class="search-placeholder">
+<i class="fas fa-search"></i>
+<p>Type at least 2 characters to search products...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- JavaScript Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Form submission redirect to 404.html
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                window.location.href = '404.html';
+            });
+        }
+        
+        // GSAP Animations for Contact Cards
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            const contactCards = document.querySelectorAll('.trust-card');
+            if (contactCards.length) {
+                // Ensure they don't get double animated by default scripts
+                contactCards.forEach(c => c.classList.remove('js-animate-card'));
+                
+                gsap.fromTo(contactCards, 
+                    { y: 50, opacity: 0, scale: 0.95 }, 
+                    { 
+                        y: 0, opacity: 1, scale: 1, duration: 0.6, 
+                        stagger: 0.15, ease: 'back.out(1.4)', 
+                        scrollTrigger: { trigger: '.trust-grid', start: 'top 80%', once: true }
+                    }
+                );
+                
+                // Hover effects
+                contactCards.forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        gsap.to(card, { y: -8, boxShadow: '0 15px 30px rgba(14, 165, 233, 0.15)', duration: 0.3 });
+                        const icon = card.querySelector('.trust-icon i');
+                        if(icon) gsap.to(icon, { scale: 1.2, rotation: 10, duration: 0.3 });
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        gsap.to(card, { y: 0, boxShadow: 'none', duration: 0.3 }); // fallback to border
+                        const icon = card.querySelector('.trust-icon i');
+                        if(icon) gsap.to(icon, { scale: 1, rotation: 0, duration: 0.3 });
+                    });
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>
