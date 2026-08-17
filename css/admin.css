@@ -83,6 +83,14 @@ body.admin-body {
     overflow-y: auto;
 }
 
+.admin-nav::-webkit-scrollbar {
+    width: 6px;
+}
+.admin-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
 .admin-nav-item {
     display: flex;
     align-items: center;
@@ -337,6 +345,8 @@ body.admin-body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
     box-shadow: var(--shadow-md);
 }
 
@@ -442,6 +452,8 @@ body.admin-body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .admin-card-title {

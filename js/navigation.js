@@ -63,7 +63,7 @@ function initMobileMenu() {
     const openMenu = () => {
         if (isMenuOpen) return;
         isMenuOpen = true;
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('no-scroll');
         toggleBtn.setAttribute('aria-expanded', 'true');
         
         // Hamburger animation to X
@@ -80,7 +80,7 @@ function initMobileMenu() {
     const closeMenu = () => {
         if (!isMenuOpen) return;
         isMenuOpen = false;
-        document.body.style.overflow = '';
+        document.body.classList.remove('no-scroll');
         toggleBtn.setAttribute('aria-expanded', 'false');
 
         // X animation back to Hamburger

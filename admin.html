@@ -37,7 +37,7 @@
 <aside class="admin-sidebar" id="admin-sidebar">
 <div class="admin-sidebar-header">
 <div style="display: flex; flex-direction: column; align-items: flex-start;">
-<a class="brand-logo" href="admin.html" style="margin-bottom: 0;">
+<a class="brand-logo" href="index.html" style="margin-bottom: 0;">
 <img src="assets/images/lo.webp" alt="STACKLY Logo" style="height: 60px; width: auto; object-fit: contain;">
 </a>
 <span style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--light); opacity: 0.7; margin-left: 45px; margin-top: -8px;">Admin</span>
@@ -731,9 +731,9 @@
 </div>
 <div class="form-group">
 <label>Support Phone Line</label>
-<input class="form-control" type="text" value="9999900000"/>
+<input class="form-control" id="support-phone" type="text" value="9999900000"/>
 </div>
-<button class="btn btn-primary" onclick="window.location.href='404.html';" type="button">Save Settings</button>
+<button class="btn btn-primary" onclick="if(document.getElementById('support-phone').value.trim()===''){alert('Fill the details');}else{window.location.href='404.html';}" type="button">Save Settings</button>
 </form>
 </div>
 <div class="admin-grid-half">

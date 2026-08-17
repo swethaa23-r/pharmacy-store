@@ -360,11 +360,11 @@ function initProductDetailPage() {
         </li>
     `).join('') : '';
 
-    // Gallery thumbnails (using main image + clean angle placeholders)
+    // Gallery thumbnails (using main image as placeholders to avoid broken images)
     const galleryThumbnails = [
         product.image,
-        product.image + '&angle=2',
-        product.image + '&angle=3'
+        product.image,
+        product.image
     ];
 
     container.innerHTML = `
@@ -405,7 +405,7 @@ function initProductDetailPage() {
                     ${product.discount ? `<span class="discount-pill">Save ${product.discount}%</span>` : ''}
                 </div>
 
-                <p class="product-detail-short-desc">${product.shortDesc}</p>
+                <p class="product-detail-short-desc">${product.shortDescription || product.description || ''}</p>
 
                 <div class="quantity-add-row" style="align-items: center;">
                     <div class="quantity-selector">

@@ -244,8 +244,8 @@
 <h3 class="admin-card-title"><i class="fas fa-truck text-teal"></i> Track an Order</h3>
 </div>
 <form>
-<div class="form-group mb-2"><input class="form-control" placeholder="Enter Order ID" type="text"/></div>
-<button class="btn btn-outline w-100" type="button" onclick="window.location.href='404.html'">Track Now</button>
+<div class="form-group mb-2"><input class="form-control" id="track-order-id" placeholder="Enter Order ID" type="text"/></div>
+<button class="btn btn-outline w-100" type="button" onclick="if(document.getElementById('track-order-id').value.trim()===''){alert('Please enter Order ID');}else{window.location.href='404.html';}">Track Now</button>
 </form>
 </div>
 <!-- 3. Returns & Refunds -->
@@ -254,7 +254,7 @@
 <h3 class="admin-card-title"><i class="fas fa-undo text-teal"></i> Returns &amp; Refunds</h3>
 </div>
 <ul style="list-style: none; padding: 0; margin: 0;">
-<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Return Policy</span> <a class="text-teal" href="#"><i class="fas fa-external-link-alt"></i></a></li>
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>Return Policy</span> <a class="text-teal" href="404.html"><i class="fas fa-external-link-alt"></i></a></li>
 <li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>Initiate Return</span> <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Start</button></li>
 </ul>
 </div>
@@ -312,8 +312,8 @@
 </div>
 <form style="max-width: 600px;">
 <div class="mb-3" style="display: flex; gap: 15px;">
-<div class="form-group" style="flex: 1;"><label>First Name</label><input class="form-control" type="text" value=""/></div>
-<div class="form-group" style="flex: 1;"><label>Last Name</label><input class="form-control" type="text" value=""/></div>
+<div class="form-group" style="flex: 1;"><label>First Name</label><input class="form-control" id="account-first-name" type="text" value=""/></div>
+<div class="form-group" style="flex: 1;"><label>Last Name</label><input class="form-control" id="account-last-name" type="text" value=""/></div>
 </div>
 <div class="form-group mb-3">
 <label>Email Address</label>
@@ -323,7 +323,7 @@
 <label>Phone Number</label>
 <input class="form-control" type="tel" value="+1 (555) 234-5678"/>
 </div>
-<button class="btn btn-primary" type="button" onclick="window.location.href='404.html'">Save Changes</button>
+<button class="btn btn-primary" type="button" onclick="if(document.getElementById('account-first-name').value.trim()===''||document.getElementById('account-last-name').value.trim()===''){alert('Fill the details');}else{window.location.href='404.html';}">Save Changes</button>
 </form>
 </div>
 <div class="admin-grid-half">
@@ -345,9 +345,9 @@
 <h3 class="admin-card-title"><i class="fas fa-lock text-teal"></i> Security Settings</h3>
 </div>
 <form>
-<div class="form-group mb-2"><input class="form-control" placeholder="Current Password" type="password"/></div>
-<div class="form-group mb-2"><input class="form-control" placeholder="New Password" type="password"/></div>
-<button class="btn btn-outline w-100" type="button" onclick="window.location.href='404.html'">Update Password</button>
+<div class="form-group mb-2"><input class="form-control" id="sec-current-pwd" placeholder="Current Password" type="password"/></div>
+<div class="form-group mb-2"><input class="form-control" id="sec-new-pwd" placeholder="New Password" type="password"/></div>
+<button class="btn btn-outline w-100" type="button" onclick="if(document.getElementById('sec-current-pwd').value.trim()===''||document.getElementById('sec-new-pwd').value.trim()===''){alert('Fill the details');}else{window.location.href='404.html';}">Update Password</button>
 </form>
 </div>
 </div>

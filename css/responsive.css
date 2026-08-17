@@ -103,6 +103,16 @@ html, body {
         grid-template-columns: 1fr !important;
     }
 
+    .quantity-add-row {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .quantity-add-row > * {
+        width: 100%;
+        justify-content: center;
+    }
+
     .quick-view-grid {
         grid-template-columns: 1fr !important;
     }
