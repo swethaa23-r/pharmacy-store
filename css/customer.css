@@ -324,3 +324,8 @@ body.customer-body {
 
 .cust-section { display: none; }
 .cust-section.active { display: block; }
+
+.admin-stat-num, .cust-stat-num {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}

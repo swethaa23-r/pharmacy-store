@@ -2,9 +2,11 @@
    PHARVITA - CORE DESIGN SYSTEM & STYLESHEET
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
+    --font-heading: 'Sora', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-ui: 'DM Sans', sans-serif;
     --primary: #087F8C;
     --primary-hover: #066772;
     --secondary: #0B4F6C;
@@ -20,9 +22,6 @@
     --amber: #F59E0B;
     --danger: #E53E3E;
     --success: #38A169;
-    
-    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -78,7 +77,7 @@ img {
 }
 
 button, input, select, textarea {
-    font-family: inherit;
+    
     font-size: inherit;
 }
 
@@ -453,7 +452,7 @@ ul {
 }
 
 .hero-title {
-    font-size: 3.2rem;
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
     letter-spacing: -1px;
     margin-bottom: 20px;
     color: var(--secondary);
@@ -595,7 +594,7 @@ ul {
 }
 
 .section-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 3vw, 3rem);
     margin-bottom: 12px;
     color: var(--secondary);
 }
@@ -2484,9 +2483,25 @@ ul {
     transform-style: preserve-3d;
     perspective: 1000px;
 }
-/ *  
- H e a l t h  
- A n i m a t i o n s  
- C S S  
- * /  
+/ * 
  
+ H e a l t h 
+ 
+ A n i m a t i o n s 
+ 
+ C S S 
+ 
+ * / 
+ 
+ 
+button,
+.nav-link,
+.badge,
+.category-label,
+.product-category,
+.badge-tag,
+.trust-text h4,
+.cat-explore-btn,
+.mobile-nav-link {
+    font-family: var(--font-ui);
+}

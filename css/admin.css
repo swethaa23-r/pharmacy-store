@@ -580,3 +580,8 @@ body.admin-body {
         display: none;
     }
 }
+
+.admin-stat-num, .cust-stat-num {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
