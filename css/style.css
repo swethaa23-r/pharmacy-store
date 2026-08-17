@@ -124,6 +124,10 @@ ul {
     height: 76px;
 }
 
+.brand-logo img {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(84%) saturate(1141%) hue-rotate(159deg) brightness(97%) contrast(99%);
+}
+
 .brand-logo {
     display: flex;
     align-items: center;

@@ -885,7 +885,7 @@ function openQuickView(productId) {
                 <p>${product.shortDesc}</p>
                 <div class="quick-view-actions">
                     <button class="btn btn-primary" id="qv-add-cart">Add to Cart</button>
-                    <a href="product.html?id=${product.id}" class="btn btn-outline">Full Details</a>
+                    <a href="404.html" class="btn btn-outline">Full Details</a>
                 </div>
             </div>
         </div>
