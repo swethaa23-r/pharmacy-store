@@ -182,11 +182,11 @@
 </div>
 </div>
 <!-- PRESCRIPTION MANAGEMENT CARD -->
-<div class="admin-card" style="display: flex; flex-direction: column;">
+<div class="admin-card" style="display: flex; flex-direction: column; height: 100%;">
 <div class="admin-card-header">
 <h3 class="admin-card-title"><i class="fas fa-file-prescription text-teal"></i> Prescriptions</h3>
 </div>
-<div style="display: flex; flex-direction: column; gap: 16px; flex-grow: 1;">
+<div style="display: flex; flex-direction: column; gap: 16px; flex-grow: 1; justify-content: space-between;">
 <div style="display: flex; justify-content: space-between; padding: 12px; background: var(--bg-main); border-radius: var(--radius-md);">
 <span style="font-weight: 600;">Awaiting Verification</span>
 <span class="status-badge pending">3 Pending</span>
@@ -323,7 +323,7 @@
 <td>Aug 13, 2026</td>
 <td>$24.99</td>
 <td><span class="status-badge processing">Processing</span></td>
-<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9842 details');"><i class="fas fa-eye"></i></button></td>
+<td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-eye"></i></button></td>
 </tr>
 <tr>
 <td><strong>#ORD-9841</strong></td>
@@ -332,7 +332,7 @@
 <td>Aug 13, 2026</td>
 <td>$34.99</td>
 <td><span class="status-badge shipped">Shipped</span></td>
-<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9841 details');"><i class="fas fa-eye"></i></button></td>
+<td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-eye"></i></button></td>
 </tr>
 <tr>
 <td><strong>#ORD-9840</strong></td>
@@ -341,7 +341,7 @@
 <td>Aug 12, 2026</td>
 <td>$8.99</td>
 <td><span class="status-badge delivered">Delivered</span></td>
-<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9840 details');"><i class="fas fa-eye"></i></button></td>
+<td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-eye"></i></button></td>
 </tr>
 <tr>
 <td><strong>#ORD-9839</strong></td>
@@ -350,7 +350,7 @@
 <td>Aug 12, 2026</td>
 <td>$29.99</td>
 <td><span class="status-badge pending">Pending</span></td>
-<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9839 details');"><i class="fas fa-eye"></i></button></td>
+<td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-eye"></i></button></td>
 </tr>
 <tr>
 <td><strong>#ORD-9838</strong></td>
@@ -359,7 +359,7 @@
 <td>Aug 11, 2026</td>
 <td>$19.99</td>
 <td><span class="status-badge cancelled">Cancelled</span></td>
-<td><button class="btn btn-outline btn-sm" onclick="alert('Viewing Order #ORD-9838 details');"><i class="fas fa-eye"></i></button></td>
+<td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'"><i class="fas fa-eye"></i></button></td>
 </tr>
 </tbody>
 </table>
@@ -403,9 +403,9 @@
 <h3 class="admin-card-title"><i class="fas fa-plus-circle text-teal"></i> Quick Add Product</h3>
 </div>
 <form>
-<div class="form-group mb-2"><input class="form-control" placeholder="Product Name" type="text"/></div>
-<div class="form-group mb-2"><input class="form-control" placeholder="Price ($)" type="number"/></div>
-<button class="btn btn-primary w-100" type="button" onclick="window.location.href='404.html'">Add Product</button>
+<div class="form-group mb-2"><input class="form-control" id="qa-product-name" placeholder="Product Name" type="text"/></div>
+<div class="form-group mb-2"><input class="form-control" id="qa-product-price" placeholder="Price ($)" type="number"/></div>
+<button class="btn btn-primary w-100" type="button" onclick="if(document.getElementById('qa-product-name').value && document.getElementById('qa-product-price').value) { window.location.href='404.html'; } else { alert('Fill the details'); }">Add Product</button>
 </form>
 </div>
 <!-- 3. Low Stock Alerts -->
@@ -443,9 +443,9 @@
 <h3 class="admin-card-title"><i class="fas fa-folder-plus text-teal"></i> Create Category</h3>
 </div>
 <form>
-<div class="form-group mb-2"><input class="form-control" placeholder="Category Name" type="text"/></div>
-<div class="form-group mb-2"><textarea class="form-control" placeholder="Description" rows="2"></textarea></div>
-<button class="btn btn-primary w-100" type="button" onclick="window.location.href='404.html'">Save Category</button>
+<div class="form-group mb-2"><input class="form-control" id="cc-name" placeholder="Category Name" type="text"/></div>
+<div class="form-group mb-2"><textarea class="form-control" id="cc-desc" placeholder="Description" rows="2"></textarea></div>
+<button class="btn btn-primary w-100" type="button" onclick="if(document.getElementById('cc-name').value && document.getElementById('cc-desc').value) { window.location.href='404.html'; } else { alert('Fill the details'); }">Save Category</button>
 </form>
 </div>
 <!-- 3. Category Performance -->
@@ -499,8 +499,8 @@
 <h3 class="admin-card-title"><i class="fas fa-bell text-danger"></i> Urgent Orders</h3>
 </div>
 <ul style="list-style: none; padding: 0; margin: 0;">
-<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>#ORD-9838 (Next-day)</span> <button class="btn btn-outline btn-sm">Process</button></li>
-<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>#ORD-9835 (Late)</span> <button class="btn btn-outline btn-sm">Process</button></li>
+<li style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;"><span>#ORD-9838 (Next-day)</span> <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Process</button></li>
+<li style="padding: 10px 0; display: flex; justify-content: space-between;"><span>#ORD-9835 (Late)</span> <button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">Process</button></li>
 </ul>
 </div>
 </div>
@@ -561,8 +561,8 @@
 <tr><th>Rx ID</th><th>Patient</th><th>Doctor</th><th>Date Submitted</th><th>Action</th></tr>
 </thead>
 <tbody>
-<tr><td>#RX-9912</td><td>Sarah Mitchell</td><td>Dr. Alan Grant</td><td>Today</td><td><button class="btn btn-primary btn-sm">Verify</button></td></tr>
-<tr><td>#RX-9911</td><td>Emily Davis</td><td>Dr. Ellie Sattler</td><td>Yesterday</td><td><button class="btn btn-primary btn-sm">Verify</button></td></tr>
+<tr><td>#RX-9912</td><td>Sarah Mitchell</td><td>Dr. Alan Grant</td><td>Today</td><td><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">Verify</button></td></tr>
+<tr><td>#RX-9911</td><td>Emily Davis</td><td>Dr. Ellie Sattler</td><td>Yesterday</td><td><button class="btn btn-primary btn-sm" onclick="window.location.href='404.html'">Verify</button></td></tr>
 </tbody>
 </table>
 </div>
@@ -645,8 +645,8 @@
 <tr><th>Product</th><th>Reviewer</th><th>Rating</th><th>Review Snippet</th><th>Action</th></tr>
 </thead>
 <tbody>
-<tr><td>Vitamin C 1000mg</td><td>Emily D.</td><td><span class="text-warning"><i class="fas fa-star"></i> 5.0</span></td><td>"Great energy booster!"</td><td><button class="btn btn-outline btn-sm">View</button></td></tr>
-<tr><td>Pulse Oximeter</td><td>Michael B.</td><td><span class="text-warning"><i class="fas fa-star"></i> 4.0</span></td><td>"Accurate and fast."</td><td><button class="btn btn-outline btn-sm">View</button></td></tr>
+<tr><td>Vitamin C 1000mg</td><td>Emily D.</td><td><span class="text-warning"><i class="fas fa-star"></i> 5.0</span></td><td>"Great energy booster!"</td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">View</button></td></tr>
+<tr><td>Pulse Oximeter</td><td>Michael B.</td><td><span class="text-warning"><i class="fas fa-star"></i> 4.0</span></td><td>"Accurate and fast."</td><td><button class="btn btn-outline btn-sm" onclick="window.location.href='404.html'">View</button></td></tr>
 </tbody>
 </table>
 </div>
@@ -743,9 +743,9 @@
 <h3 class="admin-card-title"><i class="fas fa-lock text-teal"></i> Security Settings</h3>
 </div>
 <form>
-<div class="form-group mb-2"><input class="form-control" placeholder="Current Password" type="password"/></div>
-<div class="form-group mb-2"><input class="form-control" placeholder="New Password" type="password"/></div>
-<button class="btn btn-outline w-100" type="button" onclick="window.location.href='404.html'">Update Password</button>
+<div class="form-group mb-2"><input class="form-control" id="sec-current-pwd" placeholder="Current Password" type="password"/></div>
+<div class="form-group mb-2"><input class="form-control" id="sec-new-pwd" placeholder="New Password" type="password"/></div>
+<button class="btn btn-outline w-100" type="button" onclick="if(document.getElementById('sec-current-pwd').value && document.getElementById('sec-new-pwd').value) { window.location.href='404.html'; } else { alert('Fill the details'); }">Update Password</button>
 </form>
 </div>
 <!-- 3. Notification Preferences -->
